@@ -90,7 +90,7 @@ p{max-width:64ch}
 .logo-dot{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 14px var(--ok);animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .nav-links ul{display:flex;gap:6px}
-.nav-links a{display:inline-flex;align-items:baseline;gap:6px;padding:9px 12px;border-radius:8px;font-size:.92rem;color:var(--text-2);position:relative;transition:color .2s}
+.nav-links a{display:inline-flex;align-items:baseline;gap:6px;white-space:nowrap;padding:9px 12px;border-radius:8px;font-size:.92rem;color:var(--text-2);position:relative;transition:color .2s}
 .nav-links a .n{font-size:.62rem;color:var(--muted)}
 .nav-links a::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .nav-links a:hover,.nav-links a.active{color:var(--text)}
