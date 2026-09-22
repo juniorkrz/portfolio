@@ -1,0 +1,132 @@
+{
+ "eyebrow": {
+  "pt": "Home lab / Automação",
+  "en": "Home lab / Automation"
+ },
+ "title": {
+  "pt": "A casa como bancada de testes",
+  "en": "The house is the test bench"
+ },
+ "lead": {
+  "pt": "Um servidor Debian em casa roda automação residencial, câmeras, um gateway de IA, DNS filtrado e parte dos serviços que estão no ar. É onde eu testo ideia nova antes de levar para o trabalho. E onde falha aparece rápido, porque a família usa todo dia.",
+  "en": "A Debian server at home runs home automation, cameras, an AI gateway, filtered DNS and part of the services that are live. It is where I test new ideas before they reach work. It is also where failures show up fast, because the family uses it every day."
+ },
+ "items": [
+  {
+   "icon": "server",
+   "title": {
+    "pt": "Home Assistant em VM, com rede e memória sob controle",
+    "en": "Home Assistant in a VM, with network and memory under control"
+   },
+   "text": {
+    "pt": "Home Assistant OS roda em uma VM libvirt/KVM no servidor Debian. A porta de rede cabeada do host falhou, então a VM saiu da bridge e passou para a rede NAT do libvirt, com port-forward aplicado por hook no start e removido no stop. A VM deixou de depender da interface física do host. O host tem pouca RAM, então um serviço systemd lê as estatísticas do balão virtio e ajusta a memória da VM ao vivo: encolhe devagar quando o guest tem folga, cresce rápido quando aperta, entre um piso de 768 MB e um teto de 4 GB. Só o free page reporting não bastava, porque cache do guest não conta como memória livre.",
+    "en": "Home Assistant OS runs in a libvirt/KVM VM on the Debian server. The host's wired port died, so the VM moved from a bridge to libvirt's NAT network, with port forwarding applied by a hook on start and removed on stop. The VM no longer depends on the host's physical interface. RAM is tight on the host, so a systemd service reads the virtio balloon stats and resizes the VM live: it shrinks slowly when the guest has headroom and grows fast when it runs short, between a 768 MB floor and a 4 GB ceiling. Free page reporting alone was not enough, because guest cache does not count as free memory."
+   },
+   "tags": [
+    "Debian",
+    "libvirt/KVM",
+    "Home Assistant OS",
+    "systemd",
+    "virtio balloon"
+   ]
+  },
+  {
+   "icon": "camera",
+   "title": {
+    "pt": "NVR leve com go2rtc e ffmpeg",
+    "en": "Lightweight NVR with go2rtc and ffmpeg"
+   },
+   "text": {
+    "pt": "Três câmeras IP, gravadas sem depender do software do fabricante. O go2rtc serve as streams e transcodifica o sub-stream para H.264, porque o stream principal das câmeras vem em H.265 e não toca no navegador. A gravação usa o principal em cópia direta, sem reencode, em segmentos de 10 minutos: um arquivo corrompido custa 10 minutos, não o dia. A retenção é por espaço em disco, não por data, com um timer que apaga o mais antigo quando passa da cota. A lição mais cara veio de um stall de rede: o ffmpeg ficou pendurado por dias sem sair, e Restart=always só age quando o processo morre. Hoje há timeout de socket no ffmpeg e um watchdog systemd que reinicia o gravador se o segmento mais novo parar de crescer.",
+    "en": "Three IP cameras, recorded without relying on vendor software. go2rtc serves the streams and transcodes the sub-stream to H.264, because the cameras' main stream comes in H.265 and browsers will not play it. Recording takes the main stream as a direct copy, no re-encode, in 10-minute segments: a corrupted file costs 10 minutes, not the day. Retention is by disk space rather than by date, with a timer that prunes the oldest files past the quota. The most expensive lesson came from a network stall: ffmpeg hung for days without exiting, and Restart=always only acts when the process dies. There is now a socket timeout on ffmpeg and a systemd watchdog that restarts the recorder if the newest segment stops growing."
+   },
+   "tags": [
+    "go2rtc",
+    "ffmpeg",
+    "RTSP",
+    "H.265 / H.264",
+    "systemd timers",
+    "Docker"
+   ]
+  },
+  {
+   "icon": "brain",
+   "title": {
+    "pt": "Um gateway de IA como cérebro da casa",
+    "en": "An AI gateway as the brain of the house"
+   },
+   "text": {
+    "pt": "O Assist do Home Assistant não fala com nenhum provedor direto. Fala com um LiteLLM em Docker que expõe um endpoint compatível com OpenAI e um único nome de modelo. Por trás, chaves da Groq em rodízio, com retry e fallback em erro 429, e Gemini configurado como provedor alternativo. Tiers gratuitos têm limite de taxa; o rodízio distribui a carga, e trocar de modelo ou provedor não mexe em nada no HA. O mesmo gateway atende a campainha: movimento na entrada dispara um snapshot em alta resolução, um modelo multimodal descreve quem chegou e o Node-RED envia foto e descrição pelo Telegram, com cooldown para não repetir aviso. Se não há pessoa na cena, nada é enviado.",
+    "en": "Home Assistant's Assist never talks to a provider directly. It talks to a LiteLLM container that exposes an OpenAI-compatible endpoint and a single model name. Behind it, Groq keys rotate, with retries and fallback on 429 errors, and Gemini is configured as an alternate provider. Free tiers are rate-limited; rotation spreads the load, and swapping a model or provider changes nothing on the HA side. The same gateway serves the doorbell: motion at the entrance triggers a high-resolution snapshot, a multimodal model describes who arrived, and Node-RED sends the photo and description over Telegram, with a cooldown to avoid repeats. If there is no person in the frame, nothing is sent."
+   },
+   "tags": [
+    "LiteLLM",
+    "Groq",
+    "Gemini",
+    "Home Assistant Assist",
+    "Node-RED",
+    "Telegram",
+    "visão computacional"
+   ]
+  },
+  {
+   "icon": "mic",
+   "title": {
+    "pt": "Voz: a casa fala e escuta",
+    "en": "Voice: the house talks and listens"
+   },
+   "text": {
+    "pt": "A Alexa não entrega frases desconhecidas a terceiros. Conversar livremente com a IA da casa exigiu uma skill custom com slot de busca livre: uma frase de abertura, depois fala natural encaminhada ao gateway. Na direção contrária, qualquer evento do HA pode virar anúncio de voz nas Echo Dot via notify. O caso mais útil é o ponto do trabalho: o webhook do relógio de ponto cai no Node-RED, que filtra os eventos que importam, monta a frase com spintax para não soar igual todo dia e anuncia em paralelo nas duas Echo.",
+    "en": "Alexa does not hand unknown phrases to third parties. Free-form conversation with the house AI required a custom skill with a search-query slot: one opening phrase, then natural speech routed to the gateway. In the other direction, any HA event can become a voice announcement on the Echo Dots through notify. The most useful case is the time clock at work: its webhook lands in Node-RED, which filters the events that matter, builds the sentence with spintax so it never sounds the same twice, and announces on both Echos in parallel."
+   },
+   "tags": [
+    "Alexa skill custom",
+    "Alexa Media Player",
+    "Node-RED",
+    "webhooks",
+    "TTS"
+   ]
+  },
+  {
+   "icon": "shield",
+   "title": {
+    "pt": "DNS da rede com filtro e controle parental",
+    "en": "Network DNS with filtering and parental controls"
+   },
+   "text": {
+    "pt": "AdGuard Home em Docker responde o DNS de toda a casa, com listas de bloqueio de anúncios e de conteúdo adulto, safe browsing e busca segura forçada. O roteador entrega o servidor como DNS primário e um resolvedor familiar público como secundário, para a rede não cair junto com o Debian. O detalhe que fez diferença: o roteador anunciava DNS IPv6 do provedor e os clientes preferiam esse caminho, furando o filtro. Desligar RA e DHCPv6 fechou o vazamento.",
+    "en": "AdGuard Home in Docker answers DNS for the whole house, with blocklists for ads and adult content, safe browsing and enforced safe search. The router hands out the server as primary DNS and a public family resolver as secondary, so the network does not go down with the Debian box. The detail that mattered: the router was advertising the ISP's IPv6 DNS and clients preferred that path, bypassing the filter. Turning off RA and DHCPv6 closed the leak."
+   },
+   "tags": [
+    "AdGuard Home",
+    "DNS",
+    "OISD",
+    "HaGeZi",
+    "Docker"
+   ]
+  },
+  {
+   "icon": "tunnel",
+   "title": {
+    "pt": "Tudo exposto por túnel, um por aplicação",
+    "en": "Everything exposed through tunnels, one per app"
+   },
+   "text": {
+    "pt": "Nada é publicado abrindo porta no roteador. Cada aplicação sai por um Cloudflare Tunnel próprio, com um subdomínio por serviço. Um túnel por app isola falhas e credenciais: derrubar ou revogar um não afeta os outros, e um deploy que dá errado não leva a casa junto. Os apps Node rodam sob pm2; os SaaS, em Docker Compose. O Zapi, minha API de WhatsApp self-hosted, alimenta os alertas de WhatsApp do Node-RED, em paralelo ao Telegram. O Node-RED é a cola de tudo: câmeras, IA, voz, ponto e mensagens passam por ele.",
+    "en": "Nothing is published by opening ports on the router. Each application leaves through its own Cloudflare Tunnel, one subdomain per service. One tunnel per app isolates failures and credentials: taking one down or revoking it does not touch the others, and a bad deploy does not take the house with it. Node apps run under pm2; the SaaS products run in Docker Compose. Zapi, my self-hosted WhatsApp API, feeds the WhatsApp alerts in Node-RED, alongside Telegram. Node-RED is the glue: cameras, AI, voice, time clock and messaging all pass through it."
+   },
+   "tags": [
+    "Cloudflare Tunnel",
+    "pm2",
+    "Docker Compose",
+    "Node-RED",
+    "Zapi",
+    "WhatsApp"
+   ]
+  }
+ ],
+ "closing": {
+  "pt": "O home lab é onde eu erro barato. Cada decisão acima veio de uma falha real: uma porta de rede que morreu, um ffmpeg travado por dias, um limite de taxa em API gratuita. O que sobrevive vira padrão nos meus projetos.",
+  "en": "The home lab is where mistakes are cheap. Every decision above came from a real failure: a dead network port, an ffmpeg process hung for days, a rate limit on a free API tier. Whatever survives becomes the default in my projects."
+ }
+}

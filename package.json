@@ -1,0 +1,18 @@
+{
+  "name": "jrkrz-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfólio de Antônio Roberto Júnior (jrkrz.xyz): site estático sem dependências, PT-BR/EN, dark/light.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "og": "node build.mjs --og",
+    "cv": "node build.mjs && node scripts/pdf.mjs",
+    "serve": "node build.mjs --serve",
+    "start": "node server/server.js"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT",
+  "author": "Antônio Roberto Júnior <jrrobertokrz@gmail.com>",
+  "repository": { "type": "git", "url": "https://github.com/juniorkrz/portfolio" }
+}

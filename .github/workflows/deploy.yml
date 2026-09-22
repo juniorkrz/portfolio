@@ -1,0 +1,72 @@
+name: Deploy jrkrz.xyz
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-portfolio
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build (sem dependências)
+        run: node build.mjs
+
+      - name: Empacotar
+        run: tar -czf deploy.tar.gz -C dist . && tar -czf server.tar.gz -C server server.js
+
+      - name: SSH via Cloudflare Access
+        run: |
+          curl -fsSL -o cloudflared.deb https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+          sudo dpkg -i cloudflared.deb && rm cloudflared.deb
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          cat > ~/.ssh/config <<EOF
+          Host deploy-target
+            HostName ${{ secrets.SSH_HOST }}
+            User ${{ secrets.SSH_USER }}
+            IdentityFile ~/.ssh/id_deploy
+            ProxyCommand cloudflared access tcp --hostname %h
+            StrictHostKeyChecking no
+            UserKnownHostsFile /dev/null
+            LogLevel ERROR
+          EOF
+
+      - name: Enviar e publicar
+        run: |
+          scp deploy.tar.gz server.tar.gz deploy-target:/tmp/
+          ssh deploy-target bash -s <<'REMOTE'
+            set -euo pipefail
+            APP=/opt/portfolio
+            mkdir -p "$APP/public.new"
+            tar -xzf /tmp/deploy.tar.gz -C "$APP/public.new"
+            test -f "$APP/public.new/index.html"   # trava: nunca publicar pasta vazia
+            tar -xzf /tmp/server.tar.gz -C "$APP"
+            rm -rf "$APP/public.old"
+            [ -d "$APP/public" ] && mv "$APP/public" "$APP/public.old"
+            mv "$APP/public.new" "$APP/public"
+            rm -f /tmp/deploy.tar.gz /tmp/server.tar.gz
+            if pm2 describe portfolio >/dev/null 2>&1; then pm2 restart portfolio --update-env; else PORT=3939 pm2 start "$APP/server.js" --name portfolio; fi
+            pm2 save >/dev/null
+            sleep 1
+            curl -fsS -o /dev/null -w "local %{http_code}\n" http://127.0.0.1:3939/
+            rm -rf "$APP/public.old"
+          REMOTE
+
+      - name: Verificar no ar
+        run: |
+          sleep 3
+          code=$(curl -s -o /dev/null -w "%{http_code}" https://jrkrz.xyz/)
+          echo "https://jrkrz.xyz -> $code"
+          test "$code" = "200"

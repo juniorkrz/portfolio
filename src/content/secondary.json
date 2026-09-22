@@ -1,0 +1,272 @@
+{
+ "secondary": [
+  {
+   "id": "placafipy",
+   "name": "PlacaFipy + Placa FIPE API",
+   "year": "2023-2024",
+   "category": {
+    "pt": "Biblioteca Python e API",
+    "en": "Python library and API"
+   },
+   "blurb": {
+    "pt": "Lib Python no PyPI que consulta FIPE, IPVA e dados do veículo pela placa, com conversão e validação de placas Mercosul. Uma API FastAPI em Docker expõe tudo via REST. GitHub Actions publica lib e imagem a cada release (565 pulls no Docker Hub).",
+    "en": "Python library on PyPI that looks up FIPE pricing, IPVA and vehicle data from a license plate, with Mercosur plate conversion and validation. A FastAPI service in Docker exposes it over REST. GitHub Actions publishes both on every release (565 Docker Hub pulls)."
+   },
+   "tags": [
+    "Python",
+    "FastAPI",
+    "BeautifulSoup",
+    "PyPI",
+    "Docker",
+    "GitHub Actions"
+   ],
+   "url": "https://pypi.org/project/PlacaFipy",
+   "url_label": {
+    "pt": "Ver no PyPI",
+    "en": "View on PyPI"
+   },
+   "code_private": false,
+   "sources": [
+    "repos-analise.md ## placafipy: pacote PlacaFipy 1.0.3 no PyPI, 3 releases, MIT; pipeline GitHub Actions publica no PyPI ao criar release (pypa/gh-action-pypi-publish); rotação aleatória de tokens ScrapingAnt; parsing com BeautifulSoup gerando tabela_fipe, valores_ipva, detalhes; métodos estáticos puros converter_placa e verificar_placa_mercosul; consumido pela placa-fipe-api",
+    "repos-analise.md ## placa-fipe-api: API fina em FastAPI 0.111 sobre a lib PlacaFipy; endpoints /estado/{sigla}, /consulta/{placa}, /converter/{placa}, /mercosul/{placa}; Docker python:alpine; imagem juniorkrz/placa-fipe-api publicada no Docker Hub a cada release com attestation; rotação de tokens ScrapingAnt via env SA_TOKENS; ~565 pulls; commits 2023-06-30 a 2024-07-05",
+    "grupos-e-inspiracoes.md ### GROUP python-apis: ciclo lib -> API -> imagem -> registro público; destaque placafipy + placa-fipe-api (PyPI e Docker Hub, 4 stars)",
+    "Reverificado 21/09/2026: gh api repos/juniorkrz/placafipy público, MIT, homepage pypi.org/project/PlacaFipy; gh api repos/juniorkrz/placa-fipe-api público, MIT, 4 stars, topics fastapi/fipe/fipe-api/placa-de-carro; hub.docker.com v2 juniorkrz/placa-fipe-api HTTP 200, pull_count 565"
+   ]
+  },
+  {
+   "id": "food-friends",
+   "name": "Food&Friends",
+   "year": "2026",
+   "category": {
+    "pt": "SaaS multi-tenant",
+    "en": "Multi-tenant SaaS"
+   },
+   "blurb": {
+    "pt": "SaaS de cardápio online para restaurantes: cardápio público com checkout, pedidos em tempo real (SSE + Redis) e assinatura via Mercado Pago com webhooks idempotentes. Multi-tenant por proxy Prisma, cerca de 30 models, testes unitários, de integração e E2E.",
+    "en": "Online menu SaaS for restaurants: public menu with checkout, real-time orders (SSE + Redis) and Mercado Pago subscriptions with idempotent webhooks. Multi-tenant through a Prisma proxy, about 30 models, unit, integration and E2E tests."
+   },
+   "tags": [
+    "TypeScript",
+    "Next.js 15",
+    "Prisma",
+    "PostgreSQL",
+    "Redis",
+    "Mercado Pago",
+    "Playwright",
+    "Docker"
+   ],
+   "url": "",
+   "url_label": {
+    "pt": "Código privado",
+    "en": "Private code"
+   },
+   "code_private": true,
+   "sources": [
+    "repos-analise.md ## food-friends: SaaS multi-tenant de cardápio online; cardápio público com carrinho e checkout; painel kanban em tempo real; produtos, cupons, funcionários, horários, entregas e relatórios; proxy tenantPrisma(tenantId) que injeta tenant e lança erro se faltar (ADR-002) coberto por teste de integração de isolamento; SSE + Redis pub/sub; Mercado Pago Checkout Transparente com cartão tokenizado no browser, webhooks assinados e idempotentes (tabela WebhookEvent), ativação do tenant só após webhook; ~30 models Prisma; testes unit/integração/E2E Playwright; CI (typecheck + unit + build) e deploy na VPS via SSH com compose prod que aguarda health-check; ADRs 001-005",
+    "repos-analise.md ## food-friends stack: TypeScript, Next.js 15 (App Router, RSC, Server Actions), React 19, Prisma 6, PostgreSQL 16, Redis 7, Vitest, Playwright, Docker multi-stage, Docker Compose, GitHub Actions; notes: nenhuma URL de produção encontrada, ~40 commits jul-ago/2026",
+    "grupos-e-inspiracoes.md ### GROUP saas-2026: Food&Friends é o mais bem estruturado em qualidade (testes unit/integração/E2E, ADRs, webhooks idempotentes), ainda sem produção confirmada",
+    "Reverificado 21/09/2026: gh api repos/juniorkrz/food-friends private=true, homepage null; sem URL em produção, por isso url vazia e code_private true"
+   ]
+  },
+  {
+   "id": "krzap",
+   "name": "Krzap",
+   "year": "2026",
+   "category": {
+    "pt": "Extensão Chrome",
+    "en": "Chrome extension"
+   },
+   "blurb": {
+    "pt": "Extensão Chrome MV3 que adiciona ao WhatsApp Web modo invisível, mensagens apagadas, templates, transcrição de áudio e webhooks, tudo local. Script no MAIN world faz ponte via wa-js com allow-list; UI em Shadow DOM; Web Locks garante uma só aba líder.",
+    "en": "Chrome MV3 extension that adds invisible mode, deleted-message recovery, templates, audio transcription and webhooks to WhatsApp Web, all local. A MAIN-world script bridges wa-js behind an allow-list; Shadow DOM UI; Web Locks keeps a single leader tab."
+   },
+   "tags": [
+    "TypeScript",
+    "Chrome MV3",
+    "Vite",
+    "wa-js",
+    "Shadow DOM",
+    "Vitest"
+   ],
+   "url": "",
+   "url_label": {
+    "pt": "Código privado",
+    "en": "Private code"
+   },
+   "code_private": true,
+   "sources": [
+    "repos-analise.md ## krzap: extensão Chrome MV3 para WhatsApp Web; modo invisível, ocultar digitando, revelar mensagens apagadas, histórico de edições, respostas rápidas, templates com variáveis, tradução, transcrição de áudio, webhooks, exportação CSV, tarefas/lembretes; tudo em chrome.storage.local sem servidor próprio; MAIN world (adapter wa-js) + ISOLATED world (features + UI) via RPC postMessage com token aleatório por carregamento; contrato WAApi com allow-list explícita; UI em Shadow DOM; campanhas, automação e webhooks executam apenas na aba líder (Web Locks); permissões mínimas no manifest; i18n pt-BR/EN/ES; testes Vitest",
+    "repos-analise.md ## krzap stack: TypeScript 5, Vite 5, @crxjs/vite-plugin, @wppconnect/wa-js 4.6, Web Locks API, Vitest 2, OpenAI API (chave do usuário); notes: repo privado, v1.1.0, apresentar como extensão própria sem citar produto de referência, tom cuidadoso (campanhas/envio em massa omitidos do card)",
+    "grupos-e-inspiracoes.md ### GROUP whatsapp-infra: krzap vale como demonstração técnica; ecossistema wa-js, Vite, testes Vitest",
+    "Revisão 21/09/2026: frase do Web Locks ajustada de 'tarefas agendadas' para 'automações e webhooks', que é o que o dossiê descreve; campanhas omitidas de propósito. gh api repos/juniorkrz/krzap private=true"
+   ]
+  },
+  {
+   "id": "instabot",
+   "name": "Instabot",
+   "year": "2021-2022",
+   "category": {
+    "pt": "Produto desktop comercial",
+    "en": "Commercial desktop product"
+   },
+   "blurb": {
+    "pt": "Produto comercial de ponta a ponta (2021 a 2022, encerrado) para participação em sorteios do Instagram: app desktop Windows em Python, backend PHP e MySQL com painel admin, licenciamento por chave, auto-update e instalador Inno Setup. 116 commits.",
+    "en": "End-to-end commercial product (2021 to 2022, retired) for Instagram giveaway entries: Windows desktop app in Python, PHP and MySQL backend with admin panel, key-based licensing, self-updater and an Inno Setup installer. 116 commits."
+   },
+   "tags": [
+    "Python",
+    "PySimpleGUI",
+    "PHP",
+    "MySQL",
+    "Selenium",
+    "PyInstaller",
+    "Inno Setup"
+   ],
+   "url": "",
+   "url_label": {
+    "pt": "Código privado",
+    "en": "Private code"
+   },
+   "code_private": true,
+   "sources": [
+    "repos-analise.md ## instabot: produto comercial desktop Windows que automatiza participação em sorteios do Instagram; PySimpleGUI (fork próprio) com threads; cliente HTTP próprio para API interna/GraphQL do Instagram; backend PHP + MySQL com painel admin (login/sessão) e métricas de uso; licenciamento por access-key (tabelas accesskeys, counter, programversion) com validação e geração de chaves; auto-updater com controle de versão remoto e force_update (baixa .zip, mata processo, reinstala); PyInstaller + Inno Setup (InstabotSetup.exe); captura de cookies via Selenium; Discord webhooks; 116 commits 2021-03-19 a 2022-08-19; encerrado",
+    "grupos-e-inspiracoes.md ### GROUP early-career: instabot como prova de produto full-stack (desktop + backend PHP/MySQL + painel admin + licenças + auto-updater + distribuição), contar a arquitetura sem publicar código",
+    "FATOS: usuário quer o Instabot no site; tom neutro e técnico; sem mencionar violação de termos; repo privado. Reverificado 21/09/2026: gh api repos/juniorkrz/instabot private=true, created 2021-03-19, último push 2022-08-19"
+   ]
+  },
+  {
+   "id": "wa-book-keeper",
+   "name": "WA Book Keeper",
+   "year": "2024",
+   "category": {
+    "pt": "Bot de WhatsApp",
+    "en": "WhatsApp bot"
+   },
+   "blurb": {
+    "pt": "Bot de moderação para grupos de leitura no WhatsApp: apaga links e remove o autor, indexa PDFs em SQLite com busca por palavra-chave (NLP) e abre e fecha grupos por cron. TypeScript e Baileys, imagem Docker multi-arch com mais de 25 opções por variáveis de ambiente.",
+    "en": "Moderation bot for WhatsApp book clubs: deletes links and removes the sender, indexes PDFs in SQLite with keyword search (NLP) and opens and closes groups on a cron schedule. TypeScript and Baileys, multi-arch Docker image with 25+ environment options."
+   },
+   "tags": [
+    "TypeScript",
+    "Node.js",
+    "Baileys",
+    "SQLite",
+    "node-cron",
+    "Express",
+    "Docker"
+   ],
+   "url": "",
+   "url_label": {
+    "pt": "Código privado",
+    "en": "Private code"
+   },
+   "code_private": true,
+   "sources": [
+    "repos-analise.md ## wa-book-keeper: bot de moderação para grupos de leitura; detecção de links com linkifyjs + auto-delete + auto-kick + alerta para grupo de admins; indexação de PDFs em SQLite e busca por palavra-chave com tokenização NLP (natural), histórico e seleção por resposta numérica; node-cron abrindo/fechando grupos com regra diferente para sexta; integração com API própria amazon-tracker; Express servindo QR em /qr; 25+ variáveis de ambiente; imagem Docker multi-arch amd64/arm64 com volume /data; release-it; TypeScript, Node 20, Baileys 6.5; 67 commits abr-out/2024, v1.0.5; repo privado",
+    "grupos-e-inspiracoes.md ### GROUP whatsapp-bots-legacy: destacar wa-book-keeper (TS, arquitetura mais limpa, cron jobs e busca NLP de documentos)",
+    "Reverificado 21/09/2026 via gh api: repo juniorkrz/wa-book-keeper privado; releases 1.0.2, 1.0.3, 1.0.4, 1.0.5-0, 1.0.5",
+    "ATENÇÃO URL: reverificado 21/09/2026 que hub.docker.com/v2/repositories/juniorkrz/wa-book-keeper responde HTTP 404 (placa-fipe-api e globo-programming-api respondem 200). A lista de FATOS cita hub.docker.com/r/juniorkrz/wa-book-keeper, mas o link está morto; como o repo é privado, url mantida vazia em vez de link quebrado. Se o usuário republicar a imagem, usar https://hub.docker.com/r/juniorkrz/wa-book-keeper com label Ver no Docker Hub / View on Docker Hub e code_private true"
+   ]
+  },
+  {
+   "id": "globo-programming-api",
+   "name": "Globo Programming API",
+   "year": "2024",
+   "category": {
+    "pt": "API Python",
+    "en": "Python API"
+   },
+   "blurb": {
+    "pt": "API FastAPI com a grade da TV Globo e afiliadas via scraping: cache em memória com TTL, snippet JS injetado para expandir a página antes do parsing e base estática de canais por região. Imagem Docker publicada por GitHub Actions (421 pulls).",
+    "en": "FastAPI service with the TV schedule of Globo and its affiliates via scraping: in-memory cache with TTL, injected JS snippet to expand the page before parsing and a static channel base by region. Docker image published through GitHub Actions (421 pulls)."
+   },
+   "tags": [
+    "Python",
+    "FastAPI",
+    "BeautifulSoup",
+    "Docker",
+    "GitHub Actions"
+   ],
+   "url": "https://github.com/juniorkrz/globo-programming-api",
+   "url_label": {
+    "pt": "Ver no GitHub",
+    "en": "View on GitHub"
+   },
+   "code_private": false,
+   "sources": [
+    "repos-analise.md ## globo-programming-api: API FastAPI com grade da TV Globo e afiliadas via scraping de redeglobo.globo.com; cache em memória com TTL configurável (DEFAULT_TTL); injeção de snippet JS (base64) via ScrapingAnt para expandir accordions antes do parsing; channels.json estático com afiliadas por região; getChannels.js e docGen.py; 3 releases 1.0.0 a 1.0.2 com imagem Docker juniorkrz/globo-programming-api publicada automaticamente com attestation (~421 pulls); endpoints /channels e /channelPrograms/{name}; Docker python:alpine; desenvolvido em 5 dias; MIT",
+    "grupos-e-inspiracoes.md ### GROUP python-apis: globo-programming-api como segundo exemplo de API com Docker publicada; cache TTL, injeção de JS, BeautifulSoup",
+    "Reverificado 21/09/2026: gh api releases 1.0.0 (2024-08-14), 1.0.1 (2024-08-15), 1.0.2 (2024-08-18); hub.docker.com v2 juniorkrz/globo-programming-api HTTP 200, pull_count 421; repo público listado nos FATOS como linkável"
+   ]
+  },
+  {
+   "id": "andresa-carneiro",
+   "name": "Andresa Carneiro",
+   "year": "2026",
+   "category": {
+    "pt": "Landing page para cliente",
+    "en": "Client landing page"
+   },
+   "blurb": {
+    "pt": "Landing page e link-na-bio para uma esteticista, no ar. HTML, CSS e JS puros, zero dependências, fontes self-hosted e imagens AVIF/WebP. Lighthouse 100 nas quatro categorias, servida por um servidor Node estático atrás de Cloudflare Tunnel com CSP e HSTS.",
+    "en": "Landing page and link-in-bio for an aesthetician, live. Plain HTML, CSS and JS, zero dependencies, self-hosted fonts and AVIF/WebP images. Lighthouse 100 across all four categories, served by a static Node server behind Cloudflare Tunnel with CSP and HSTS."
+   },
+   "tags": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Lighthouse 100",
+    "SEO",
+    "Node.js",
+    "Cloudflare Tunnel",
+    "pm2"
+   ],
+   "url": "https://andresacarneiro.jrkrz.xyz",
+   "url_label": {
+    "pt": "Ver site",
+    "en": "Visit site"
+   },
+   "code_private": true,
+   "sources": [
+    "repos-analise.md ## andresa-carneiro: landing page de conversão para WhatsApp e página link-na-bio para esteticista de Carpina-PE em HTML/CSS/JS vanilla sem dependências em produção; Lighthouse 100 em Performance, Acessibilidade, Boas Práticas e SEO (mobile e desktop); CSS inline no head, JS ~1KB com defer, funciona 100% sem JS; fontes self-hosted com subset (~75KB); AVIF + WebP + JPEG com srcset e width/height (CLS 0); Google Maps lazy sob clique para manter CSP; server.js Node sem dependências atrás do cloudflared com pm2, CSP, HSTS, X-Content-Type-Options, Referrer-Policy, Permissions-Policy; contraste AA validado; JSON-LD schema.org; canonical, Open Graph, sitemap.xml, robots.txt; SPEC.md, PLAN.md, RELATORIO.md, PENDENCIAS.md; repo privado, site em produção respondeu 200",
+    "grupos-e-inspiracoes.md ### GROUP web-apps: andresa-carneiro mostra entrega para cliente real com processo documentado, Lighthouse 100 nas 4 categorias, CSP, fontes e imagens otimizadas, servidor Node sem dependências atrás de cloudflared + pm2",
+    "FATOS: https://andresacarneiro.jrkrz.xyz verificada em produção em 21/09/2026 (HTTP 200); MEMORY.md Andresa Carneiro landing: LP estática WhatsApp (Carpina-PE), Lighthouse 100, pm2 + tunnel dedicado. Reverificado 21/09/2026: gh api repos/juniorkrz/andresa-carneiro private=true, por isso code_private true com url do site no ar; porta local e IP omitidos do card"
+   ]
+  },
+  {
+   "id": "cardapio-fast",
+   "name": "Cardápio Fast",
+   "year": "2026",
+   "category": {
+    "pt": "Web app",
+    "en": "Web app"
+   },
+   "blurb": {
+    "pt": "Cardápio digital mobile-first: o cliente monta o pedido e envia formatado para o WhatsApp do restaurante; painel admin white-label com produtos, pedidos e identidade visual. Next.js 16 com Server Actions, Prisma e MySQL, deploy em um comando com pm2.",
+    "en": "Mobile-first digital menu: customers build the order and send it pre-formatted to the restaurant's WhatsApp; white-label admin panel with products, orders and branding. Next.js 16 with Server Actions, Prisma and MySQL, one-command deploy with pm2."
+   },
+   "tags": [
+    "TypeScript",
+    "Next.js 16",
+    "React 19",
+    "Prisma",
+    "MySQL",
+    "NextAuth",
+    "Zustand",
+    "pm2"
+   ],
+   "url": "",
+   "url_label": {
+    "pt": "Código privado",
+    "en": "Private code"
+   },
+   "code_private": true,
+   "sources": [
+    "repos-analise.md ## cardapio-simples: plataforma de cardápio digital mobile-first (Cardápio Fast); cliente monta pedido no celular e envia formatado para o WhatsApp do estabelecimento; painel admin autenticado com categorias, produtos com upload de imagem, histórico de pedidos e identidade visual (logo, cores, nome); Next.js 16 standalone com deploy em um comando (prisma db push -> build -> pm2 reload) em servidor Debian; Server Actions para todo o CRUD com revalidatePath sem REST; rota dinâmica /api/upload; NextAuth CredentialsProvider e middleware em /admin; models UserAdmin, Category, Product, Order (items JSON, forma de pagamento, troco), StoreSettings (white-label: nome, logo, WhatsApp, cor primária); carrinho Zustand com bottom-sheet; scroll spy, busca em tempo real; 23 commits em abr/2026; sem URL pública no repo",
+    "repos-analise.md ## cardapio-simples stack: TypeScript, Next.js 16 (App Router, Server Actions, output standalone), React 19, Prisma 5, MySQL, NextAuth.js 4, Zustand 5, Bootstrap 5, PM2",
+    "grupos-e-inspiracoes.md ### GROUP python-2026-side: cardapio-simples é o mais completo como produto; ecossistema Next.js + Prisma + MySQL com deploy real em servidor Debian via PM2/standalone; sem URL pública confirmada",
+    "Reverificado 21/09/2026: gh api repos/juniorkrz/cardapio-simples private=true, homepage null; url vazia e code_private true. Nota interna (não vai ao card): dossiê aponta comparação de senha em texto puro em src/lib/auth.ts, vale corrigir antes de divulgar"
+   ]
+  }
+ ]
+}

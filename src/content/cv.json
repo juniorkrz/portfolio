@@ -1,0 +1,246 @@
+{
+ "pt": {
+  "name": "Antônio Roberto Júnior",
+  "headline": "Desenvolvedor Full Stack",
+  "location": "Recife, Pernambuco, Brasil",
+  "links": [
+   "jrkrz.xyz",
+   "github.com/juniorkrz",
+   "linkedin.com/in/junior-krz",
+   "jrrobertokrz@gmail.com"
+  ],
+  "summary": "Desenvolvedor Full Stack com foco em produtos web completos, do banco de dados ao deploy. No trabalho, evoluo o ERP de um provedor de internet em PHP, Python e MySQL, com integrações ao SAP Business One. Fora dele, mantenho três SaaS multi-tenant em produção com TypeScript, Next.js, Prisma e PostgreSQL, em infraestrutura própria com Docker e Cloudflare Tunnel. Disponível para vagas remotas e freelas.",
+  "experience": [
+   {
+    "role": "Desenvolvedor Full Stack Jr",
+    "company": "DTEL Telecom (provedor de internet, Recife)",
+    "period": "2024–atual",
+    "bullets": [
+     "Desenvolvo e evoluo o ERP interno do provedor em PHP, JavaScript, Python e MySQL.",
+     "Projetei e automatizei o sistema de cadastro de novos clientes.",
+     "Implementei integrações do ERP com o SAP Business One e com APIs REST.",
+     "Automatizei rotinas operacionais com Python e Selenium, como a configuração de painéis de roteadores.",
+     "Produzo relatórios e análises de dados; mantenho e otimizo os bancos MySQL.",
+     "Faço mentoria técnica de trainees e mantenho boas práticas de código, versionamento com Git e metodologias ágeis."
+    ]
+   },
+   {
+    "role": "Desenvolvedor Web",
+    "company": "Eletro Solar Engenharia",
+    "period": "2022",
+    "bullets": [
+     "Criei o site institucional em WordPress: tema, páginas, hospedagem e domínio.",
+     "Integrei o site a campanhas de tráfego pago para captação de leads."
+    ]
+   }
+  ],
+  "projects": [
+   {
+    "name": "PromoAI",
+    "tech": "TypeScript, Next.js 15, Prisma, PostgreSQL, Redis, BullMQ, Baileys, Python/FastAPI, Docker, GitHub Actions",
+    "text": "SaaS multi-tenant que escuta grupos de WhatsApp, converte links da Amazon, Shopee e Mercado Livre para o afiliado de cada tenant e dispara nos grupos de destino com idempotência. Monorepo com 3 apps Node e 3 microserviços Python, filas BullMQ, reescrita por IA (Gemini/Groq), assinatura via Mercado Pago e CI/CD com backup e rollback.",
+    "link": "promoai.jrkrz.xyz"
+   },
+   {
+    "name": "Zapi",
+    "tech": "TypeScript, Fastify 5, Prisma, PostgreSQL, Baileys 7, Next.js 15, MCP, Docker Compose",
+    "text": "API multi-tenant de WhatsApp com dashboard, tokens de API, webhooks e status de sessão em tempo real via WebSocket. OpenAPI gerada dos schemas Zod e servidor MCP embutido para uso por agentes de IA.",
+    "link": "zapi.jrkrz.xyz"
+   },
+   {
+    "name": "Veículos.lat",
+    "tech": "TypeScript, Next.js 15, React 19, Prisma, PostgreSQL, Tailwind CSS 4, Cloudflare R2, Docker, GitHub Actions",
+    "text": "Catálogo de veículos multi-loja: cada loja tem site próprio por subdomínio ou domínio, painel de gestão e imagem de anúncio gerada no servidor (next/og + sharp) para compartilhar no WhatsApp. Em produção com cliente-piloto; deploy com pg_dump antes das migrations e rollback por tag.",
+    "link": "veiculos.lat"
+   },
+   {
+    "name": "StickerBot",
+    "tech": "TypeScript, Node.js 20, Baileys 7, Drizzle ORM, MySQL, sharp, ffmpeg, Mercado Pago, Docker",
+    "text": "Bot de WhatsApp com 64 comandos (figurinhas, moderação de grupos, utilidades) e plano VIP pago via PIX. Nasceu em Python em 2023, foi reescrito em Node e depois TypeScript; imagem publicada no Docker Hub a cada release.",
+    "link": "github.com/juniorkrz/stickerbot"
+   },
+   {
+    "name": "PlacaFipy + Placa FIPE API",
+    "tech": "Python, requests, BeautifulSoup, FastAPI, Docker, GitHub Actions, PyPI, Docker Hub",
+    "text": "Biblioteca no PyPI que consulta FIPE e IPVA pela placa e converte placas para o padrão Mercosul, exposta como API REST em FastAPI. Publicação automática no PyPI e no Docker Hub a cada release.",
+    "link": "pypi.org/project/PlacaFipy"
+   }
+  ],
+  "skills": [
+   {
+    "group": "Linguagens",
+    "items": "TypeScript, JavaScript, Python, PHP, SQL"
+   },
+   {
+    "group": "Back-end",
+    "items": "Node.js, Fastify, Express, FastAPI, Prisma, Drizzle ORM, REST, OpenAPI, BullMQ"
+   },
+   {
+    "group": "Front-end",
+    "items": "React, Next.js (App Router), Tailwind CSS, WordPress"
+   },
+   {
+    "group": "Dados",
+    "items": "PostgreSQL, MySQL, Redis, SQLite"
+   },
+   {
+    "group": "DevOps e infra",
+    "items": "Docker, Docker Compose, GitHub Actions, Linux (Debian), systemd, pm2, Cloudflare Tunnel, libvirt/KVM"
+   },
+   {
+    "group": "Integrações e automação",
+    "items": "WhatsApp (Baileys), Mercado Pago, SAP Business One, Selenium, web scraping, Home Assistant, Node-RED"
+   }
+  ],
+  "education": [
+   {
+    "title": "Graduação em Análise e Desenvolvimento de Sistemas",
+    "org": "Faculdade Estácio",
+    "period": "2024–2026 (concluída em jun/2026)"
+   }
+  ],
+  "courses": [
+   "Coders 24: Back-End, Ada Tech (jun/2024, 19h)",
+   "Programação de Software Embarcado em IoT, FIT Instituto de Tecnologia (out/2022, 20h)",
+   "Desenvolvimento de Sistemas para Redes IoT, FIT Instituto de Tecnologia (mai/2022, 24h)",
+   "CS50, Harvard (problem sets em C, 2022)"
+  ],
+  "languages": [
+   "Português (nativo)",
+   "Inglês (intermediário)"
+  ],
+  "ai": "Trabalho com Claude Code: agentes, skills, servidores MCP e workflows multiagente. Aplico Spec-Driven Development e Project Memory com ADRs nos repositórios, engenharia de prompts e revisão crítica de todo código gerado por IA.",
+  "labels": {
+   "summary": "Resumo",
+   "experience": "Experiência",
+   "projects": "Projetos",
+   "skills": "Competências",
+   "education": "Formação",
+   "courses": "Cursos",
+   "languages": "Idiomas",
+   "ai": "IA e agentes"
+  }
+ },
+ "en": {
+  "name": "Antônio Roberto Júnior",
+  "headline": "Full Stack Developer",
+  "location": "Recife, Pernambuco, Brazil",
+  "links": [
+   "jrkrz.xyz",
+   "github.com/juniorkrz",
+   "linkedin.com/in/junior-krz",
+   "jrrobertokrz@gmail.com"
+  ],
+  "summary": "Full Stack Developer focused on shipping complete web products, from database to deployment. At work I build on an ISP's internal ERP in PHP, Python and MySQL, including SAP Business One integrations. On the side I run three multi-tenant SaaS products in production with TypeScript, Next.js, Prisma and PostgreSQL on self-hosted infrastructure with Docker and Cloudflare Tunnel. Open to remote roles and freelance work.",
+  "experience": [
+   {
+    "role": "Junior Full Stack Developer",
+    "company": "DTEL Telecom (internet service provider, Recife)",
+    "period": "2024–present",
+    "bullets": [
+     "Build and evolve the ISP's internal ERP in PHP, JavaScript, Python and MySQL.",
+     "Designed and automated the new-customer registration system.",
+     "Built ERP integrations with SAP Business One and REST APIs.",
+     "Automated operational routines with Python and Selenium, such as configuring router admin panels.",
+     "Deliver reports and data analysis; maintain and tune the MySQL databases.",
+     "Mentor trainees and uphold code standards, Git-based versioning and agile practices."
+    ]
+   },
+   {
+    "role": "Web Developer",
+    "company": "Eletro Solar Engenharia",
+    "period": "2022",
+    "bullets": [
+     "Built the company website on WordPress: theme, pages, hosting and domain setup.",
+     "Connected the site to paid traffic campaigns for lead generation."
+    ]
+   }
+  ],
+  "projects": [
+   {
+    "name": "PromoAI",
+    "tech": "TypeScript, Next.js 15, Prisma, PostgreSQL, Redis, BullMQ, Baileys, Python/FastAPI, Docker, GitHub Actions",
+    "text": "Multi-tenant SaaS that listens to WhatsApp groups, rewrites Amazon, Shopee and Mercado Livre links with each tenant's affiliate tag and dispatches them to target groups with idempotency. Monorepo with 3 Node apps and 3 Python microservices, BullMQ queues, AI rewriting (Gemini/Groq), Mercado Pago subscriptions and CI/CD with backup and rollback.",
+    "link": "promoai.jrkrz.xyz"
+   },
+   {
+    "name": "Zapi",
+    "tech": "TypeScript, Fastify 5, Prisma, PostgreSQL, Baileys 7, Next.js 15, MCP, Docker Compose",
+    "text": "Multi-tenant WhatsApp API with a dashboard, API tokens, webhooks and live session status over WebSocket. OpenAPI generated from Zod schemas and a built-in MCP server for AI agents.",
+    "link": "zapi.jrkrz.xyz"
+   },
+   {
+    "name": "Veículos.lat",
+    "tech": "TypeScript, Next.js 15, React 19, Prisma, PostgreSQL, Tailwind CSS 4, Cloudflare R2, Docker, GitHub Actions",
+    "text": "Multi-store vehicle catalog: each dealership gets its own site on a subdomain or custom domain, an admin panel and server-rendered listing images (next/og + sharp) for WhatsApp sharing. Live with a pilot customer; deploys run pg_dump before migrations and support tag-based rollback.",
+    "link": "veiculos.lat"
+   },
+   {
+    "name": "StickerBot",
+    "tech": "TypeScript, Node.js 20, Baileys 7, Drizzle ORM, MySQL, sharp, ffmpeg, Mercado Pago, Docker",
+    "text": "WhatsApp bot with 64 commands (stickers, group moderation, utilities) and a paid VIP plan via PIX. Started in Python in 2023, rewritten in Node and then TypeScript; Docker image published to Docker Hub on every release.",
+    "link": "github.com/juniorkrz/stickerbot"
+   },
+   {
+    "name": "PlacaFipy + Placa FIPE API",
+    "tech": "Python, requests, BeautifulSoup, FastAPI, Docker, GitHub Actions, PyPI, Docker Hub",
+    "text": "PyPI library that looks up FIPE and IPVA data by license plate and converts plates to the Mercosur format, exposed as a FastAPI REST service. Auto-published to PyPI and Docker Hub on every release.",
+    "link": "pypi.org/project/PlacaFipy"
+   }
+  ],
+  "skills": [
+   {
+    "group": "Languages",
+    "items": "TypeScript, JavaScript, Python, PHP, SQL"
+   },
+   {
+    "group": "Back end",
+    "items": "Node.js, Fastify, Express, FastAPI, Prisma, Drizzle ORM, REST, OpenAPI, BullMQ"
+   },
+   {
+    "group": "Front end",
+    "items": "React, Next.js (App Router), Tailwind CSS, WordPress"
+   },
+   {
+    "group": "Data",
+    "items": "PostgreSQL, MySQL, Redis, SQLite"
+   },
+   {
+    "group": "DevOps and infrastructure",
+    "items": "Docker, Docker Compose, GitHub Actions, Linux (Debian), systemd, pm2, Cloudflare Tunnel, libvirt/KVM"
+   },
+   {
+    "group": "Integrations and automation",
+    "items": "WhatsApp (Baileys), Mercado Pago, SAP Business One, Selenium, web scraping, Home Assistant, Node-RED"
+   }
+  ],
+  "education": [
+   {
+    "title": "Degree in Systems Analysis and Development",
+    "org": "Faculdade Estácio",
+    "period": "2024–2026 (completed Jun 2026)"
+   }
+  ],
+  "courses": [
+   "Coders 24: Back-End, Ada Tech (Jun 2024, 19h)",
+   "Embedded Software Programming for IoT, FIT Instituto de Tecnologia (Oct 2022, 20h)",
+   "Systems Development for IoT Networks, FIT Instituto de Tecnologia (May 2022, 24h)",
+   "CS50, Harvard (problem sets in C, 2022)"
+  ],
+  "languages": [
+   "Portuguese (native)",
+   "English (intermediate)"
+  ],
+  "ai": "Work with Claude Code: agents, skills, MCP servers and multi-agent workflows. Apply Spec-Driven Development and Project Memory with ADRs in my repos, prompt engineering and critical review of all AI-generated code.",
+  "labels": {
+   "summary": "Summary",
+   "experience": "Experience",
+   "projects": "Projects",
+   "skills": "Skills",
+   "education": "Education",
+   "courses": "Courses",
+   "languages": "Languages",
+   "ai": "AI and agents"
+  }
+ }
+}

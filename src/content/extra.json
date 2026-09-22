@@ -1,0 +1,25 @@
+{
+  "console": {
+    "title": "krz@homelab ~ tail -f automations.log",
+    "lines": [
+      { "time": "08:02:11", "tag": "whatsapp", "text": { "pt": "nova oferta detectada no grupo de origem", "en": "new deal detected in the source group" } },
+      { "time": "08:02:12", "tag": "promoai", "text": { "pt": "link Shopee convertido para afiliado do tenant", "en": "Shopee link converted to the tenant's affiliate link" } },
+      { "time": "08:02:14", "tag": "worker", "text": { "pt": "copy reescrita pela IA e enfileirada no BullMQ", "en": "copy rewritten by AI and queued in BullMQ" } },
+      { "time": "08:02:15", "tag": "dispatch", "text": { "pt": "publicada em 3 grupos de destino · 0 duplicadas", "en": "published to 3 destination groups · 0 duplicates" } },
+      { "time": "12:01:03", "tag": "ponto", "text": { "pt": "saída para o almoço → anúncio de voz nas Echo Dot", "en": "lunch break clock-out → voice announcement on the Echo Dots" } },
+      { "time": "12:10:00", "tag": "nvr", "text": { "pt": "segmento gravado · watchdog ok · 3 câmeras online", "en": "segment recorded · watchdog ok · 3 cameras online" } },
+      { "time": "18:30:44", "tag": "zapi", "text": { "pt": "sessão reconectada · webhook entregue em 84 ms", "en": "session reconnected · webhook delivered in 84 ms" } },
+      { "time": "23:59:58", "tag": "deploy", "text": { "pt": "jrkrz.xyz publicado via Cloudflare Tunnel", "en": "jrkrz.xyz published through Cloudflare Tunnel" } }
+    ]
+  },
+  "floating": ["Baileys · Node.js", "Next.js · Prisma · Postgres", "Debian · Docker · pm2"],
+  "mock": {
+    "name": "StickerBot",
+    "status": { "pt": "online · 3 anos no ar", "en": "online · 3 years live" },
+    "user1": { "pt": "/sticker", "en": "/sticker" },
+    "bot1": { "pt": "Criando sua figurinha…", "en": "Creating your sticker…" },
+    "user2": { "pt": "/fipe ABC1D23", "en": "/fipe ABC1D23" },
+    "bot2": { "pt": "**FIPE:** Fiesta 1.6 2014 · R$ 42.315", "en": "**FIPE:** Fiesta 1.6 2014 · R$ 42,315" }
+  },
+  "notfound": { "pt": "Essa página não existe.", "en": "This page does not exist." }
+}

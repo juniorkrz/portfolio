@@ -1,0 +1,399 @@
+{
+ "featured": [
+  {
+   "id": "promoai",
+   "name": "PromoAI",
+   "year": "2026",
+   "badge": {
+    "pt": "SaaS · no ar",
+    "en": "SaaS · live"
+   },
+   "kind": {
+    "pt": "SaaS multi-tenant · monorepo Node + Python",
+    "en": "Multi-tenant SaaS · Node + Python monorepo"
+   },
+   "title": {
+    "pt": "Ofertas de afiliado no WhatsApp, do grupo de origem ao disparo",
+    "en": "Affiliate deals on WhatsApp, from source group to dispatch"
+   },
+   "pitch": {
+    "pt": "O bot escuta grupos de WhatsApp, converte links da Amazon, Shopee e Mercado Livre para o afiliado de cada tenant, reescreve e categoriza a oferta com IA, passa por fila de aprovação e dispara nos grupos de destino. Inclui blog e loja pública por tenant, direcionador de grupos com balanceamento e cobrança por assinatura via Mercado Pago. Monorepo pnpm com 3 apps Node, 3 microserviços Python (FastAPI) e 4 packages, 7 serviços no Docker Compose, 221 commits.",
+    "en": "The bot listens to WhatsApp groups, swaps Amazon, Shopee and Mercado Livre links for each tenant's affiliate version, rewrites and categorizes the deal with AI, runs it through an approval queue and dispatches it to the target groups. It also ships a public blog and store per tenant, a load-balancing group redirector and subscription billing through Mercado Pago. pnpm monorepo with 3 Node apps, 3 Python (FastAPI) microservices and 4 packages, 7 services in Docker Compose, 221 commits."
+   },
+   "bullets": [
+    {
+     "pt": "Pipeline assíncrono com BullMQ e Redis: conversão, aprovação (manual ou automática) e dispatch, com retries em backoff exponencial e idempotência garantida por constraints únicas no Prisma (uma mensagem por grupo, um dispatch por destino).",
+     "en": "Async pipeline on BullMQ and Redis: conversion, approval (manual or automatic) and dispatch, with exponential-backoff retries and idempotency enforced by unique Prisma constraints (one message per group, one dispatch per destination)."
+    },
+    {
+     "pt": "Bot multi-sessão com Baileys 7, um socket por tenant, e credenciais de cada tenant criptografadas em repouso com AES-256-GCM. Reescrita e categorização com adaptadores Gemini e Groq em fallback.",
+     "en": "Multi-session Baileys 7 bot, one socket per tenant, with each tenant's credentials encrypted at rest with AES-256-GCM. Rewriting and categorization through Gemini and Groq adapters with fallback."
+    },
+    {
+     "pt": "Extensão Chrome MV3 que sincroniza cookies criptografados do Mercado Livre e da Amazon e tirou o Playwright dos conversores. CI no GitHub Actions com lint, build e Jest, backup remoto antes do deploy, SSH via Cloudflare Tunnel e rollback por branch ou tag.",
+     "en": "Chrome MV3 extension that syncs encrypted Mercado Livre and Amazon cookies and removed Playwright from the converters. GitHub Actions CI with lint, build and Jest, remote backup before deploy, SSH over Cloudflare Tunnel and rollback by branch or tag."
+    }
+   ],
+   "tags": [
+    "TypeScript",
+    "Next.js 15",
+    "Prisma",
+    "PostgreSQL",
+    "Redis",
+    "BullMQ",
+    "Baileys 7",
+    "Python",
+    "FastAPI",
+    "Mercado Pago",
+    "Docker Compose",
+    "GitHub Actions",
+    "Cloudflare Tunnel"
+   ],
+   "live_url": "https://promoai.jrkrz.xyz",
+   "live_label": {
+    "pt": "Acessar",
+    "en": "Visit"
+   },
+   "code_url": "",
+   "code_private": true,
+   "role": {
+    "pt": "Autor: produto, arquitetura, backend, frontend e deploy",
+    "en": "Author: product, architecture, backend, frontend and deployment"
+   },
+   "screenshot_hint": "https://promoai.jrkrz.xyz (landing, seção hero)",
+   "sources": [
+    "repos-analise.md > ## promo-ai-saas: what/stack/arch/notes (221 commits; monorepo pnpm 3 apps Node + 3 FastAPI + 4 packages; BullMQ/Redis com retries e idempotência por constraints Prisma; Baileys multi-sessão; AES-256-GCM; Gemini/Groq em fallback; extensão MV3 promoai-sync; Docker Compose 7 serviços; CI lint+build+Jest, backup, SSH via Cloudflare Tunnel, rollback; blog/loja por tenant; direcionador de grupos; Mercado Pago)",
+    "grupos-e-inspiracoes.md > GROUP saas-2026 (PromoAI como peça mais forte, no ar em promoai.jrkrz.xyz)",
+    "FATOS: https://promoai.jrkrz.xyz HTTP 200 em 21/09/2026; apresentar como projeto dele, sem citar outras pessoas"
+   ]
+  },
+  {
+   "id": "zapi",
+   "name": "Zapi",
+   "year": "2026",
+   "badge": {
+    "pt": "API · no ar",
+    "en": "API · live"
+   },
+   "kind": {
+    "pt": "API REST multi-tenant de WhatsApp · Fastify + MCP",
+    "en": "Multi-tenant WhatsApp REST API · Fastify + MCP"
+   },
+   "title": {
+    "pt": "API de WhatsApp com dashboard, webhooks e servidor MCP para agentes de IA",
+    "en": "WhatsApp API with a dashboard, webhooks and an MCP server for AI agents"
+   },
+   "pitch": {
+    "pt": "Plataforma sobre Baileys 7: o admin cria usuários com limite de sessões e cada usuário pareia números por QR ou pairing code, gera e rotaciona tokens de API e envia mensagens, mídia e comandos de grupo via REST. A documentação nasce dos schemas Zod (OpenAPI, Scalar, Swagger, llms.txt). Roda self-hosted e alimenta os alertas de WhatsApp dos fluxos de automação residencial no Node-RED.",
+    "en": "Built on Baileys 7: an admin creates users with a session cap, and each user pairs numbers by QR or pairing code, issues and rotates API tokens, and sends messages, media and group commands over REST. Docs are generated from the Zod schemas (OpenAPI, Scalar, Swagger, llms.txt). Self-hosted, it also feeds the WhatsApp alerts in the home-automation flows in Node-RED."
+   },
+   "bullets": [
+    {
+     "pt": "Monorepo pnpm com 4 pacotes: shared (schemas Zod), api (Fastify 5 + Prisma 6 + gerenciador Baileys), web (dashboard Next.js 15) e mcp. Tokens de API com hash HMAC em repouso, roles ADMIN e USER, limite de sessões por usuário e trilha de auditoria.",
+     "en": "pnpm monorepo with 4 packages: shared (Zod schemas), api (Fastify 5 + Prisma 6 + Baileys manager), web (Next.js 15 dashboard) and mcp. API tokens HMAC-hashed at rest, ADMIN and USER roles, per-user session cap and an audit trail."
+    },
+    {
+     "pt": "Servidor MCP remoto stateless (Streamable HTTP) montado dentro da própria API, reaproveitando auth e validação das rotas REST, para uso direto por agentes como o Claude Code.",
+     "en": "Stateless remote MCP server (Streamable HTTP) mounted inside the API itself, reusing the REST routes' auth and validation, so agents such as Claude Code can drive it directly."
+    },
+    {
+     "pt": "Estado de autenticação do Baileys (credenciais e chaves Signal) persistido no PostgreSQL, sessões restauradas no boot do container, reconexão por DisconnectReason com limite de tentativas e resolução de destinatário via onWhatsApp para tratar o nono dígito brasileiro e LIDs.",
+     "en": "Baileys auth state (credentials and Signal keys) persisted in PostgreSQL, sessions restored on container boot, DisconnectReason-aware reconnection with a retry cap, and recipient resolution via onWhatsApp to handle Brazil's ninth digit and LIDs."
+    }
+   ],
+   "tags": [
+    "TypeScript",
+    "Fastify 5",
+    "Zod",
+    "OpenAPI",
+    "Prisma 6",
+    "PostgreSQL",
+    "Baileys 7",
+    "Next.js 15",
+    "MCP",
+    "WebSocket",
+    "Docker Compose",
+    "Cloudflare Tunnel"
+   ],
+   "live_url": "https://zapi.jrkrz.xyz",
+   "live_label": {
+    "pt": "Acessar",
+    "en": "Visit"
+   },
+   "code_url": "",
+   "code_private": true,
+   "role": {
+    "pt": "Autor: arquitetura, API, dashboard, servidor MCP e deploy self-hosted",
+    "en": "Author: architecture, API, dashboard, MCP server and self-hosted deployment"
+   },
+   "screenshot_hint": "https://zapi.jrkrz.xyz/reference (Swagger UI) ou https://zapi.jrkrz.xyz (dashboard/login)",
+   "sources": [
+    "repos-analise.md > ## zapi: what/stack/arch/notes (monorepo 4 pacotes shared/api/web/mcp; Fastify 5, Prisma 6, Baileys 7; tokens HMAC-hashed at rest; roles ADMIN/USER e limite de sessões; auditoria; auth state em Postgres e restauração no boot; reconexão por DisconnectReason; MCP Streamable HTTP em /api/v1/mcp via app.inject; OpenAPI/Scalar/Swagger/llms.txt; onWhatsApp para 9º dígito e LIDs; Docker Compose + Cloudflare Tunnel)",
+    "grupos-e-inspiracoes.md > GROUP whatsapp-infra (zapi como peça forte, produto em produção)",
+    "FATOS: https://zapi.jrkrz.xyz HTTP 200 em 21/09/2026, Swagger em /reference; home lab: Zapi self-hosted alimenta alertas de WhatsApp no Node-RED"
+   ]
+  },
+  {
+   "id": "veiculos-lat",
+   "name": "Veículos.lat",
+   "year": "2026",
+   "badge": {
+    "pt": "SaaS · em produção com cliente piloto",
+    "en": "SaaS · live with a pilot client"
+   },
+   "kind": {
+    "pt": "SaaS multi-loja · Next.js 15 + Prisma",
+    "en": "Multi-store SaaS · Next.js 15 + Prisma"
+   },
+   "title": {
+    "pt": "Um site de catálogo para cada loja de veículos, com anúncio pronto para o WhatsApp",
+    "en": "A catalog site for every car dealer, with WhatsApp-ready ad images"
+   },
+   "pitch": {
+    "pt": "O super admin cadastra lojas e cada uma ganha site próprio em subdomínio ou domínio próprio, com marca, cores, banners e painel para publicar veículos e fotos. O compartilhamento no WhatsApp sai com imagem de anúncio (Story ou Feed) gerada no servidor e link preview. Em produção com loja piloto em vip.veiculos.lat, 76 commits em um mês.",
+    "en": "A super admin registers dealerships and each one gets its own site on a subdomain or custom domain, with branding, colors, banners and a panel to publish vehicles and photos. Sharing to WhatsApp ships a server-generated ad image (Story or Feed) and a rich link preview. In production with a pilot store at vip.veiculos.lat, 76 commits in one month."
+   },
+   "bullets": [
+    {
+     "pt": "Multi-tenant resolvido pelo header Host (subdomínio ou domínio próprio da loja), auth própria com JWT httpOnly (jose + bcryptjs), papéis SUPER_ADMIN, STORE_ADMIN e STORE_SELLER, convite de primeiro acesso por link e invalidação de sessão ao trocar a senha.",
+     "en": "Multi-tenancy resolved from the Host header (subdomain or the store's custom domain), in-house auth with httpOnly JWT (jose + bcryptjs), SUPER_ADMIN, STORE_ADMIN and STORE_SELLER roles, first-access invite links and session invalidation on password change."
+    },
+    {
+     "pt": "Imagem de anúncio gerada server-side com next/og (Satori) e sharp; storage abstraído (local em dev, S3 compatível via R2 em produção); rate limiting persistido no Postgres; PWA instalável para o catálogo e para o painel.",
+     "en": "Ad images rendered server-side with next/og (Satori) and sharp; abstracted storage (local in dev, S3-compatible R2 in production); rate limiting persisted in Postgres; installable PWA for both the catalog and the panel."
+    },
+    {
+     "pt": "Deploy por GitHub Actions com disparo manual e branch ou tag para rollback: lint e tsc, rsync por SSH preservando .env e backups, pg_dump antes das migrations, health-check com retries e alerta no Discord. Cloudflare Tunnel em apex e wildcard, app escutando só em localhost. 17 ADRs no repositório.",
+     "en": "GitHub Actions deploy, manually triggered with a branch or tag for rollback: lint and tsc, rsync over SSH preserving .env and backups, pg_dump before migrations, health check with retries and a Discord alert. Cloudflare Tunnel on apex and wildcard, app bound to localhost only. 17 ADRs in the repository."
+    }
+   ],
+   "tags": [
+    "TypeScript",
+    "Next.js 15",
+    "React 19",
+    "Prisma",
+    "PostgreSQL",
+    "Tailwind CSS 4",
+    "Satori",
+    "sharp",
+    "Cloudflare R2",
+    "PWA",
+    "Docker",
+    "GitHub Actions",
+    "Cloudflare Tunnel"
+   ],
+   "live_url": "https://veiculos.lat",
+   "live_label": {
+    "pt": "Acessar",
+    "en": "Visit"
+   },
+   "code_url": "",
+   "code_private": true,
+   "role": {
+    "pt": "Autor: produto, arquitetura, backend, frontend, deploy e operação",
+    "en": "Author: product, architecture, backend, frontend, deployment and operations"
+   },
+   "screenshot_hint": "https://vip.veiculos.lat (catálogo da loja piloto) ou https://veiculos.lat (landing)",
+   "sources": [
+    "repos-analise.md > ## veh-saas: what/stack/arch/notes (76 commits jul-ago/2026; multi-tenant por Host e Store.customDomain; JWT httpOnly jose + bcryptjs; papéis SUPER_ADMIN/STORE_ADMIN/STORE_SELLER; convite de 1º acesso; next/og Satori + sharp; storage local/S3-R2; rate limiting no Postgres (ADR-0017); PWA; GitHub Actions com branch/tag para rollback, rsync, pg_dump, health-check, Discord; Cloudflare Tunnel apex + wildcard; 17 ADRs; cliente-piloto vip.veiculos.lat)",
+    "grupos-e-inspiracoes.md > GROUP saas-2026 (Veículos.lat prova entrega end-to-end com cliente-piloto em produção)",
+    "FATOS: https://veiculos.lat HTTP 200 em 21/09/2026; loja piloto vip.veiculos.lat"
+   ]
+  },
+  {
+   "id": "horusponto",
+   "name": "HorusPonto",
+   "year": "2026",
+   "badge": {
+    "pt": "Infra & CI/CD",
+    "en": "Infra & CI/CD"
+   },
+   "kind": {
+    "pt": "SaaS de ponto eletrônico · deploy self-hosted",
+    "en": "Time-clock SaaS · self-hosted deployment"
+   },
+   "title": {
+    "pt": "Do repositório à VPS: deploy self-hosted com pipeline automático",
+    "en": "From repository to VPS: self-hosted deployment on an automated pipeline"
+   },
+   "pitch": {
+    "pt": "SaaS de ponto eletrônico multiempresa em Next.js 15, Prisma, PostgreSQL e Auth.js v5. Neste projeto o trabalho foi levar a aplicação para produção em VPS própria e deixar o caminho de deploy previsível: push na branch principal, build no servidor, migração do banco, troca de release e restart, com backup do release anterior a cada publicação.",
+    "en": "Multi-company electronic time-clock SaaS on Next.js 15, Prisma, PostgreSQL and Auth.js v5. The work here was taking the app to production on a self-managed VPS and making the deploy path predictable: push to the main branch, build on the server, migrate the database, swap the release and restart, with the previous release backed up on every publish."
+   },
+   "bullets": [
+    {
+     "pt": "Deploy self-hosted: Next.js via pm2, PostgreSQL local e app escutando só em localhost, exposto por cloudflared.",
+     "en": "Self-hosted deployment: Next.js under pm2, local PostgreSQL and the app bound to localhost only, exposed through cloudflared."
+    },
+    {
+     "pt": "Script de deploy que reaproveita .env e uploads do release atual, roda pnpm install, prisma generate, prisma migrate deploy e next build, faz swap de diretórios com backup do release anterior e reinicia o pm2.",
+     "en": "Deploy script that reuses the current release's .env and uploads, runs pnpm install, prisma generate, prisma migrate deploy and next build, swaps directories with a backup of the previous release and restarts pm2."
+    },
+    {
+     "pt": "Pipeline GitHub Actions: a cada push na branch principal empacota o fonte, envia por scp e executa o script via SSH com chave ed25519 dedicada ao CI. Ajuste de auth para self-host e documentação Project Memory.",
+     "en": "GitHub Actions pipeline: every push to the main branch packages the source, copies it over scp and runs the script via SSH with an ed25519 key dedicated to CI. Auth adjusted for self-hosting, plus Project Memory documentation."
+    }
+   ],
+   "tags": [
+    "Next.js 15",
+    "Prisma",
+    "PostgreSQL",
+    "Auth.js v5",
+    "pm2",
+    "cloudflared",
+    "GitHub Actions",
+    "SSH",
+    "Linux"
+   ],
+   "live_url": "https://sistema-de-pontos-wheat.vercel.app",
+   "live_label": {
+    "pt": "Acessar",
+    "en": "Visit"
+   },
+   "code_url": "",
+   "code_private": true,
+   "role": {
+    "pt": "Infra, CI/CD e deploy self-hosted",
+    "en": "Infrastructure, CI/CD and self-hosted deployment"
+   },
+   "screenshot_hint": "https://sistema-de-pontos-wheat.vercel.app (tela de login)",
+   "sources": [
+    "FATOS: HorusPonto (repo privado sistema-de-pontos, SaaS de ponto eletrônico multiempresa, Next.js 15 + Prisma + PostgreSQL + Auth.js v5); contribuição = deploy self-hosted em VPS (pm2 + cloudflared + PostgreSQL), script de deploy com swap de release e backup, pipeline GitHub Actions de deploy automático, ajuste de auth para self-host, documentação Project Memory; URL https://sistema-de-pontos-wheat.vercel.app HTTP 200 em 21/09/2026; regra: não citar nomes de outras pessoas",
+    "memory/sistema-de-pontos-deploy.md (Next.js 15 via pm2, app escutando só em localhost e servido por cloudflared, PostgreSQL local; deploy-horus.sh reaproveita .env + uploads, pnpm install, prisma generate, prisma migrate deploy, next build, swap de diretórios com backup horus-ponto-old-<TS>, restart pm2; workflow deploy.yml no push da branch principal: empacota fonte, scp, SSH com chave ed25519 dedicada ao CI)"
+   ]
+  },
+  {
+   "id": "stickerbot",
+   "name": "StickerBot",
+   "year": "2023 → hoje",
+   "badge": {
+    "pt": "Open source · desde 2023",
+    "en": "Open source · since 2023"
+   },
+   "kind": {
+    "pt": "Bot de WhatsApp · TypeScript + Baileys 7",
+    "en": "WhatsApp bot · TypeScript + Baileys 7"
+   },
+   "title": {
+    "pt": "Bot de figurinhas com 64 comandos, VIP via PIX e imagem no Docker Hub",
+    "en": "Sticker bot with 64 commands, PIX-paid VIP and an image on Docker Hub"
+   },
+   "pitch": {
+    "pt": "Cria figurinhas a partir de imagem, vídeo e texto e reúne comandos de utilidade e administração de grupo: ban, promote, listas, sorteios, CEP, CNPJ, FIPE, tradução, áudio do YouTube, GIFs do Giphy e Tenor, loterias. Nasceu em Python em 2023, foi reescrito em Node e depois em TypeScript. 346 commits, 6 releases e imagem publicada no Docker Hub.",
+    "en": "Turns images, video and text into stickers and bundles utility and group-admin commands: ban, promote, lists, raffles, postal-code and CNPJ lookups, FIPE, translation, YouTube audio, Giphy and Tenor GIFs, lottery results. Born in Python in 2023, rewritten in Node and then in TypeScript. 346 commits, 6 releases and a published Docker Hub image."
+   },
+   "bullets": [
+    {
+     "pt": "Auto-loader de comandos, um arquivo por comando (64 no total), com validação de permissão (admin do grupo versus operador do bot), rate limit por usuário e prefixos configuráveis; 23 handlers isolam as integrações externas.",
+     "en": "Command auto-loader, one file per command (64 in total), with permission checks (group admin versus bot operator), per-user rate limiting and configurable prefixes; 23 handlers isolate the external integrations."
+    },
+    {
+     "pt": "Monetização embutida: assinatura VIP mensal paga por PIX via Mercado Pago com webhook de confirmação, e sistema de anúncios com frequência global e cooldown por chat, ajustável em runtime. Persistência em MySQL com Drizzle ORM, migrada do SQLite.",
+     "en": "Built-in monetization: monthly VIP subscription paid by PIX through Mercado Pago with a confirmation webhook, plus an ad system with global frequency and per-chat cooldown, adjustable at runtime. MySQL persistence with Drizzle ORM, migrated from SQLite."
+    },
+    {
+     "pt": "Processamento de mídia com sharp e ffmpeg; Dockerfile com libvips, ffmpeg e imagemagick; GitHub Actions publica a imagem no Docker Hub a cada release com attestation de provenance; Dependabot ativo.",
+     "en": "Media processing with sharp and ffmpeg; Dockerfile with libvips, ffmpeg and imagemagick; GitHub Actions publishes the image to Docker Hub on every release with provenance attestation; Dependabot enabled."
+    }
+   ],
+   "tags": [
+    "TypeScript",
+    "Node.js 20",
+    "Baileys 7",
+    "Drizzle ORM",
+    "MySQL",
+    "Express",
+    "sharp",
+    "ffmpeg",
+    "Mercado Pago",
+    "Docker",
+    "GitHub Actions",
+    "Docker Hub"
+   ],
+   "live_url": "https://api.whatsapp.com/send/?phone=558194742944&text=!menu",
+   "live_label": {
+    "pt": "Testar no WhatsApp",
+    "en": "Try it on WhatsApp"
+   },
+   "code_url": "https://github.com/juniorkrz/stickerbot",
+   "code_private": false,
+   "role": {
+    "pt": "Autor e mantenedor",
+    "en": "Author and maintainer"
+   },
+   "screenshot_hint": "https://github.com/juniorkrz/stickerbot (README) ou https://hub.docker.com/r/juniorkrz/stickerbot",
+   "sources": [
+    "repos-analise.md > ## stickerbot: what/stack/arch/notes (64 comandos via auto-loader; 23 handlers; permissão admin vs operador; rate limit; Drizzle ORM + MySQL migrado de SQLite; VIP mensal por PIX via MercadoPago com webhook; sistema de anúncios com frequência e cooldown; Dockerfile libvips/ffmpeg/imagemagick; CI publica no Docker Hub com attestation de provenance; Dependabot; 6 releases; ~346 commits; histórico Python -> JavaScript -> TypeScript; 3 stars, MIT)",
+    "repos-analise.md > ## deprecated-stickerbot (primeira versão em Python/Flask, jul/2023), ## py-stickerbot (nov/2023), ## stickerbot-premium (reescrita em Node.js, fev/2024) como histórico do produto",
+    "grupos-e-inspiracoes.md > GROUP whatsapp-bots-legacy (trajetória Python -> Node -> TypeScript ao longo de 2,5 anos)",
+    "gh api repos/juniorkrz/stickerbot/readme (verificado em 21/09/2026): 'Veja o bot em funcionamento' -> https://api.whatsapp.com/send/?phone=558194742944&text=!menu; 'Originalmente desenvolvido em Python, migrado para JavaScript e agora escrito em TypeScript'",
+    "FATOS: Docker Hub hub.docker.com/r/juniorkrz/stickerbot; repo público juniorkrz/stickerbot; stickerbot.jrkrz.com morto, usar wa.me do README"
+   ]
+  },
+  {
+   "id": "bigstats",
+   "name": "BigStats",
+   "year": "2025 → 2026",
+   "badge": {
+    "pt": "Web app · no ar",
+    "en": "Web app · live"
+   },
+   "kind": {
+    "pt": "Painel de dados · PHP 8 + MySQL",
+    "en": "Data dashboard · PHP 8 + MySQL"
+   },
+   "title": {
+    "pt": "Ranking de seguidores dos participantes do BBB, atualizado quase em tempo real",
+    "en": "Follower rankings for Big Brother Brasil contestants, updated near real time"
+   },
+   "pitch": {
+    "pt": "Monitora o Instagram de cada participante do Big Brother Brasil (temporadas 2025 e 2026): seguidores, ganho em 24 horas, 7 e 30 dias, ranking e histórico em gráficos, com rotação automática entre perfis no estilo telão. PHP 8 com Composer e PSR-4, MySQL, Chart.js e worker CLI próprio para a coleta. Nova interface em React e TypeScript em andamento.",
+    "en": "Tracks the Instagram of every Big Brother Brasil contestant (2025 and 2026 seasons): followers, 24-hour, 7-day and 30-day gains, rankings and chart history, cycling through profiles like a stadium display. PHP 8 with Composer and PSR-4, MySQL, Chart.js and a purpose-built CLI worker for collection. A new React and TypeScript interface is in progress."
+   },
+   "bullets": [
+    {
+     "pt": "Worker CLI em loop com intervalo configurável, runId por execução, log em arquivo e alertas críticos via Telegram.",
+     "en": "CLI worker running in a loop with a configurable interval, a runId per execution, file logging and critical alerts over Telegram."
+    },
+    {
+     "pt": "Pool de contas do Instagram com rotação (menos usada primeiro, flag rate_limited) e cookies criptografados com AES-256-CBC.",
+     "en": "Pool of Instagram accounts with rotation (least used first, rate_limited flag) and cookies encrypted with AES-256-CBC."
+    },
+    {
+     "pt": "Tabela de histórico como série temporal e cálculo de ganho em 24h, 7d e 30d direto em SQL; Repository pattern genérico com Reflection sobre PDO; migrações SQL versionadas por data.",
+     "en": "History table as a time series with 24h, 7d and 30d gains computed directly in SQL; generic Repository pattern via Reflection over PDO; SQL migrations versioned by date."
+    }
+   ],
+   "tags": [
+    "PHP 8",
+    "Composer",
+    "MySQL",
+    "PDO",
+    "Chart.js",
+    "jQuery",
+    "Bootstrap",
+    "Telegram Bot API",
+    "PWA",
+    "Apache"
+   ],
+   "live_url": "https://bigstats.jrkrz.xyz",
+   "live_label": {
+    "pt": "Acessar",
+    "en": "Visit"
+   },
+   "code_url": "https://github.com/juniorkrz/bigstats",
+   "code_private": false,
+   "role": {
+    "pt": "Autor: backend, worker de coleta, front e hospedagem",
+    "en": "Author: backend, data-collection worker, frontend and hosting"
+   },
+   "screenshot_hint": "https://bigstats.jrkrz.xyz (ranking / modo telão)",
+   "sources": [
+    "repos-analise.md > ## bigstats: what/stack/arch/notes (PHP 8 Composer PSR-4, MySQL/MariaDB via PDO, Chart.js, PWA manifest, Apache; worker CLI update_instagram_data.php em loop com runId, log e Telegram; pool de contas com rotação e flag rate_limited; cookies AES-256-CBC; instagram_user_history com ganho 24h/7d/30d em SQL; Repository pattern com Reflection; migrações SQL por data; ~84 commits em duas temporadas jan/2025 e jan/2026; self-hosted em bigstats.jrkrz.xyz)",
+    "repos-analise.md > ## bbb-stats-central (reescrita do front em React + TypeScript, WIP; nota: 'bom para citar como modernização em andamento junto ao bigstats')",
+    "grupos-e-inspiracoes.md > GROUP web-apps (bigstats como produto real em produção)",
+    "FATOS: https://bigstats.jrkrz.xyz HTTP 200 em 21/09/2026; repo público juniorkrz/bigstats; bbb-stats-central só como 1 frase no card do BigStats"
+   ]
+  }
+ ]
+}

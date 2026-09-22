@@ -1,0 +1,719 @@
+{
+ "meta": {
+  "title": {
+   "pt": "Antônio Roberto Júnior · Desenvolvedor Full Stack",
+   "en": "Antônio Roberto Júnior · Full Stack Developer"
+  },
+  "description": {
+   "pt": "Full Stack em Recife, PE: ERP de telecom, automação de WhatsApp e SaaS self-hosted com Node, TypeScript, PHP e Python. Aberto a vagas remotas e freelas.",
+   "en": "Full Stack Developer in Recife, Brazil: telecom ERP, WhatsApp automation and self-hosted SaaS in Node, TypeScript, PHP and Python. Open to remote roles and freelance."
+  },
+  "og_title": {
+   "pt": "Antônio Roberto Júnior, Desenvolvedor Full Stack",
+   "en": "Antônio Roberto Júnior, Full Stack Developer"
+  },
+  "og_description": {
+   "pt": "SaaS multi-tenant, APIs de WhatsApp e automação com IA, do commit ao deploy em infraestrutura própria. Recife, PE.",
+   "en": "Multi-tenant SaaS, WhatsApp APIs and AI automation, from commit to deploy on my own infrastructure. Recife, Brazil."
+  }
+ },
+ "nav": {
+  "about": {
+   "pt": "Sobre",
+   "en": "About"
+  },
+  "projects": {
+   "pt": "Projetos",
+   "en": "Projects"
+  },
+  "homelab": {
+   "pt": "Home lab",
+   "en": "Home lab"
+  },
+  "journey": {
+   "pt": "Trajetória",
+   "en": "Journey"
+  },
+  "stack": {
+   "pt": "Stack",
+   "en": "Stack"
+  },
+  "contact": {
+   "pt": "Contato",
+   "en": "Contact"
+  }
+ },
+ "hero": {
+  "kicker": {
+   "pt": "Full Stack · Recife, PE · disponível para remoto e freelas",
+   "en": "Full Stack · Recife, Brazil · open to remote work and freelance"
+  },
+  "name": "Antônio Roberto Júnior",
+  "role": {
+   "pt": "Desenvolvedor Full Stack",
+   "en": "Full Stack Developer"
+  },
+  "pitch": {
+   "pt": "Cuido do ERP de um provedor de internet, com integrações SAP Business One, APIs REST e automações em Python. Fora do expediente, construo e opero SaaS multi-tenant em infraestrutura própria e automatizo WhatsApp, casa e rotina com Node, TypeScript e IA.",
+   "en": "I work on an ISP's internal ERP, integrating SAP Business One, REST APIs and Python automation. After hours I build and run multi-tenant SaaS on my own infrastructure and automate WhatsApp, my home and my routine with Node, TypeScript and AI."
+  },
+  "cta_primary": {
+   "pt": "Ver projetos",
+   "en": "See projects"
+  },
+  "cta_secondary": {
+   "pt": "Falar comigo",
+   "en": "Get in touch"
+  },
+  "metrics": [
+   {
+    "value": "6",
+    "label": {
+     "pt": "projetos no ar",
+     "en": "projects in production"
+    },
+    "proof": "Seis URLs verificadas com HTTP 200 em 21/09/2026 (FATOS VERIFICADOS): PromoAI (promoai.jrkrz.xyz), Zapi (zapi.jrkrz.xyz), Veículos.lat (veiculos.lat, com loja piloto vip.veiculos.lat), BigStats (bigstats.jrkrz.xyz), HorusPonto (sistema-de-pontos-wheat.vercel.app; papel dele: infra, CI/CD e deploy self-hosted, 5 commits entre 2026-07-04 e 2026-08-03 confirmados via gh api) e a LP andresacarneiro.jrkrz.xyz. Fontes: repos-analise.md (promo-ai-saas, zapi, veh-saas, bigstats, andresa-carneiro). StickerBot ficou FORA da contagem: o site stickerbot.jrkrz.com não responde e o link wa.me do README não é prova de produção verificada hoje."
+   },
+   {
+    "value": "5",
+    "label": {
+     "pt": "anos programando",
+     "en": "years coding"
+    },
+    "proof": "Primeiros repositórios em março de 2021 (repos-analise.md: instabot 2021-03-19 -> 2022-08-19; bbbot 2021-03-24); 2021 a 2026 = 5 anos completos. Conta GitHub criada em 2019 (FATOS VERIFICADOS), mas a contagem usa o primeiro código, não a criação da conta."
+   },
+   {
+    "value": "60+",
+    "label": {
+     "pt": "repositórios no GitHub",
+     "en": "GitHub repositories"
+    },
+    "proof": "64 repositórios na conta juniorkrz, 28 públicos (FATOS VERIFICADOS; repos-analise.md cobre 46 deles)."
+   }
+  ],
+  "chips": [
+   "TypeScript",
+   "Node.js",
+   "Next.js",
+   "PHP",
+   "Python",
+   "PostgreSQL",
+   "Docker",
+   "Baileys · WhatsApp"
+  ]
+ },
+ "about": {
+  "eyebrow": {
+   "pt": "Sobre",
+   "en": "About"
+  },
+  "statement": {
+   "pt": "Automação é o fio que liga tudo o que faço: do ERP do provedor ao bot de WhatsApp, da esteira de deploy à campainha de casa.",
+   "en": "Automation is the thread running through everything I do: from the ISP's ERP to WhatsApp bots, from the deploy pipeline to my own doorbell."
+  },
+  "paragraphs": [
+   {
+    "pt": "Comecei em 2021, com Python e PHP, resolvendo problemas concretos. O primeiro produto que entreguei a outras pessoas foi um app desktop para Windows com backend próprio, licenciamento por chave e auto-update. Em 2022 fiz o CS50 de Harvard e dois cursos de IoT, e construí o site de uma empresa de engenharia solar.",
+    "en": "I started in 2021 with Python and PHP, solving concrete problems. The first product I put in other people's hands was a Windows desktop app with its own backend, key-based licensing and auto-update. In 2022 I took Harvard's CS50 and two IoT courses, and built the website for a solar engineering company."
+   },
+   {
+    "pt": "Desde 2024 trabalho na DTEL Telecom, provedor de internet em Recife, no ERP que sustenta a operação: PHP, JavaScript, Python e MySQL, integrações com SAP Business One e APIs REST, cadastro de clientes automatizado e robôs em Selenium que configuram painéis de roteadores. Em junho de 2026 concluí a graduação em Análise e Desenvolvimento de Sistemas.",
+    "en": "Since 2024 I have worked at DTEL Telecom, an ISP in Recife, on the ERP the whole operation runs on: PHP, JavaScript, Python and MySQL, SAP Business One and REST API integrations, automated customer onboarding and Selenium robots that configure router panels. In June 2026 I completed my degree in Systems Analysis and Development."
+   },
+   {
+    "pt": "Em casa, um servidor Debian é meu laboratório: Home Assistant em VM, NVR com go2rtc, Node-RED, LiteLLM como cérebro de IA, AdGuard e um túnel Cloudflare por aplicação. Com a mesma disciplina de infra, em 2026 coloquei três SaaS em produção, PromoAI, Zapi e Veículos.lat, todos em Docker Compose atrás de Cloudflare Tunnel, dois deles com pipeline de deploy que faz backup do banco antes das migrations e permite rollback.",
+    "en": "At home, a Debian server is my lab: Home Assistant in a VM, an NVR on go2rtc, Node-RED, LiteLLM as the AI brain, AdGuard and one Cloudflare Tunnel per app. With the same infra discipline, in 2026 I shipped three SaaS products, PromoAI, Zapi and Veículos.lat, all on Docker Compose behind Cloudflare Tunnel, two of them with a deploy pipeline that backs up the database before migrations and supports rollback."
+   }
+  ],
+  "facts": [
+   {
+    "label": {
+     "pt": "Base",
+     "en": "Based in"
+    },
+    "value": {
+     "pt": "Recife, PE, Brasil",
+     "en": "Recife, Brazil"
+    }
+   },
+   {
+    "label": {
+     "pt": "Atual",
+     "en": "Currently"
+    },
+    "value": {
+     "pt": "Full Stack Jr na DTEL Telecom",
+     "en": "Junior Full Stack at DTEL Telecom"
+    }
+   },
+   {
+    "label": {
+     "pt": "Formação",
+     "en": "Education"
+    },
+    "value": {
+     "pt": "ADS, Faculdade Estácio (2026)",
+     "en": "Systems Analysis & Development, Estácio (2026)"
+    }
+   },
+   {
+    "label": {
+     "pt": "Idiomas",
+     "en": "Languages"
+    },
+    "value": {
+     "pt": "Português nativo, inglês intermediário",
+     "en": "Portuguese (native), English (intermediate)"
+    }
+   }
+  ],
+  "pillars": [
+   {
+    "title": {
+     "pt": "WhatsApp & automação",
+     "en": "WhatsApp & automation"
+    },
+    "text": {
+     "pt": "Bots de WhatsApp em produção desde 2023, hoje sobre Baileys: figurinhas, moderação de grupos, disparo com fila e idempotência, servidor MCP para agentes de IA. Robôs em Selenium quando não existe API.",
+     "en": "WhatsApp bots in production since 2023, now built on Baileys: stickers, group moderation, queued dispatch with idempotency, an MCP server for AI agents. Selenium robots when there is no API."
+    },
+    "tags": [
+     "Baileys",
+     "Node.js",
+     "BullMQ",
+     "Node-RED",
+     "Selenium",
+     "MCP"
+    ]
+   },
+   {
+    "title": {
+     "pt": "SaaS & web",
+     "en": "SaaS & web"
+    },
+    "text": {
+     "pt": "Produtos multi-tenant em Next.js App Router, Fastify, Prisma e PostgreSQL, com autenticação e RBAC, pagamentos via Mercado Pago e Docker Compose. Três deles no ar em 2026, um com cliente-piloto real.",
+     "en": "Multi-tenant products on Next.js App Router, Fastify, Prisma and PostgreSQL, with authentication and RBAC, Mercado Pago payments and Docker Compose. Three of them live in 2026, one with a real pilot customer."
+    },
+    "tags": [
+     "Next.js",
+     "TypeScript",
+     "Fastify",
+     "Prisma",
+     "PostgreSQL",
+     "Redis"
+    ]
+   },
+   {
+    "title": {
+     "pt": "Infra & home lab",
+     "en": "Infra & home lab"
+    },
+    "text": {
+     "pt": "Servidor Debian em casa com Home Assistant em VM, NVR com go2rtc, Node-RED, AdGuard e gateway de IA. Deploy com GitHub Actions, backup antes de migrar, rollback por tag e um túnel Cloudflare por aplicação.",
+     "en": "A Debian home server running Home Assistant in a VM, an NVR on go2rtc, Node-RED, AdGuard and an AI gateway. Deploys via GitHub Actions, backup before migrations, tag-based rollback and one Cloudflare Tunnel per app."
+    },
+    "tags": [
+     "Debian",
+     "Docker",
+     "Cloudflare Tunnel",
+     "GitHub Actions",
+     "libvirt/KVM",
+     "Home Assistant"
+    ]
+   }
+  ]
+ },
+ "projects_section": {
+  "eyebrow": {
+   "pt": "Projetos",
+   "en": "Projects"
+  },
+  "title": {
+   "pt": "Produtos que saíram do localhost.",
+   "en": "Products that left localhost."
+  },
+  "lead": {
+   "pt": "SaaS multi-tenant, APIs de WhatsApp, bots e pacotes publicados no PyPI e no Docker Hub. A maioria roda em infraestrutura própria, boa parte com deploy automatizado.",
+   "en": "Multi-tenant SaaS, WhatsApp APIs, bots and packages published on PyPI and Docker Hub. Most of it runs on my own infrastructure, much of it with automated deploys."
+  },
+  "also_built": {
+   "pt": "Também construí",
+   "en": "Also built"
+  },
+  "private_code": {
+   "pt": "Código privado",
+   "en": "Private code"
+  },
+  "live": {
+   "pt": "Acessar",
+   "en": "Visit"
+  },
+  "code": {
+   "pt": "Código",
+   "en": "Code"
+  }
+ },
+ "journey": {
+  "eyebrow": {
+   "pt": "Trajetória",
+   "en": "Journey"
+  },
+  "title": {
+   "pt": "Da automação ao produto.",
+   "en": "From automation to product."
+  },
+  "items": [
+   {
+    "period": {
+     "pt": "2026",
+     "en": "2026"
+    },
+    "type": "project",
+    "type_label": {
+     "pt": "Projeto",
+     "en": "Project"
+    },
+    "title": {
+     "pt": "O ano dos SaaS",
+     "en": "The year of SaaS"
+    },
+    "org": {
+     "pt": "Projetos próprios",
+     "en": "Independent work"
+    },
+    "text": {
+     "pt": "PromoAI, Zapi e Veículos.lat foram do zero à produção em poucos meses, todos multi-tenant e em infraestrutura própria. No mesmo ano cuidei da infra, do CI/CD e do deploy self-hosted do HorusPonto e entreguei uma landing page com Lighthouse 100 para uma cliente real.",
+     "en": "PromoAI, Zapi and Veículos.lat went from zero to production within months, all multi-tenant and on my own infrastructure. The same year I handled infra, CI/CD and self-hosted deploy for HorusPonto and delivered a landing page scoring 100 on Lighthouse for a real client."
+    },
+    "bullets": [
+     {
+      "pt": "Next.js 15 App Router, Fastify, Prisma, PostgreSQL, Redis e BullMQ",
+      "en": "Next.js 15 App Router, Fastify, Prisma, PostgreSQL, Redis and BullMQ"
+     },
+     {
+      "pt": "Docker Compose e GitHub Actions com backup do banco antes das migrations e rollback por tag",
+      "en": "Docker Compose and GitHub Actions with a database backup before migrations and tag-based rollback"
+     },
+     {
+      "pt": "Spec-Driven Development e Project Memory com ADRs, com Claude Code no fluxo de trabalho",
+      "en": "Spec-Driven Development and Project Memory with ADRs, with Claude Code in the workflow"
+     }
+    ]
+   },
+   {
+    "period": {
+     "pt": "2024 a 2026",
+     "en": "2024 to 2026"
+    },
+    "type": "education",
+    "type_label": {
+     "pt": "Formação",
+     "en": "Education"
+    },
+    "title": {
+     "pt": "Graduação em Análise e Desenvolvimento de Sistemas",
+     "en": "Degree in Systems Analysis and Development"
+    },
+    "org": {
+     "pt": "Faculdade Estácio",
+     "en": "Estácio"
+    },
+    "text": {
+     "pt": "Concluída em junho de 2026, em paralelo ao trabalho na DTEL.",
+     "en": "Completed in June 2026 while working full time at DTEL."
+    },
+    "bullets": [
+     {
+      "pt": "Trabalhos em C, Python e web ao longo do curso",
+      "en": "Coursework in C, Python and web development"
+     }
+    ]
+   },
+   {
+    "period": {
+     "pt": "Desde 2024",
+     "en": "Since 2024"
+    },
+    "type": "work",
+    "type_label": {
+     "pt": "Trabalho",
+     "en": "Work"
+    },
+    "title": {
+     "pt": "Desenvolvedor Full Stack Jr",
+     "en": "Junior Full Stack Developer"
+    },
+    "org": {
+     "pt": "DTEL Telecom, Recife",
+     "en": "DTEL Telecom, Recife"
+    },
+    "text": {
+     "pt": "Desenvolvimento e evolução do ERP interno de um provedor de internet, com PHP, JavaScript, Python e MySQL.",
+     "en": "Building and evolving an ISP's internal ERP with PHP, JavaScript, Python and MySQL."
+    },
+    "bullets": [
+     {
+      "pt": "Projetei e automatizei o sistema de cadastro de novos clientes",
+      "en": "Designed and automated the new-customer onboarding system"
+     },
+     {
+      "pt": "Integrações com SAP Business One e APIs REST; relatórios e análises de dados",
+      "en": "SAP Business One and REST API integrations; reporting and data analysis"
+     },
+     {
+      "pt": "Automações com Python e Selenium, como a configuração de painéis de roteadores",
+      "en": "Python and Selenium automation, such as configuring router admin panels"
+     },
+     {
+      "pt": "Manutenção e otimização de bancos MySQL; versionamento, metodologias ágeis e mentoria técnica de trainees",
+      "en": "MySQL maintenance and tuning; version control, agile practices and technical mentoring of trainees"
+     }
+    ]
+   },
+   {
+    "period": {
+     "pt": "jun/2024",
+     "en": "Jun 2024"
+    },
+    "type": "course",
+    "type_label": {
+     "pt": "Curso",
+     "en": "Course"
+    },
+    "title": {
+     "pt": "Coders 24: Back-End",
+     "en": "Coders 24: Back-End"
+    },
+    "org": {
+     "pt": "Ada Tech",
+     "en": "Ada Tech"
+    },
+    "text": {
+     "pt": "Formação de back-end de 19 horas, no mesmo ano em que entrei na DTEL e comecei a graduação.",
+     "en": "A 19-hour back-end program, taken the same year I joined DTEL and started my degree."
+    },
+    "bullets": [
+     {
+      "pt": "19 horas, certificado em junho de 2024",
+      "en": "19 hours, certified June 2024"
+     }
+    ]
+   },
+   {
+    "period": {
+     "pt": "2023 a 2024",
+     "en": "2023 to 2024"
+    },
+    "type": "project",
+    "type_label": {
+     "pt": "Projeto",
+     "en": "Project"
+    },
+    "title": {
+     "pt": "StickerBot e as primeiras publicações",
+     "en": "StickerBot and first public releases"
+    },
+    "org": {
+     "pt": "Projetos próprios",
+     "en": "Independent work"
+    },
+    "text": {
+     "pt": "O StickerBot nasceu em Python em julho de 2023, foi reescrito em Node e depois em TypeScript, e hoje é imagem no Docker Hub com mais de 60 comandos e plano VIP via Pix. No mesmo período publiquei a PlacaFipy no PyPI e APIs em FastAPI com imagem Docker gerada a cada release.",
+     "en": "StickerBot started in Python in July 2023, was rewritten in Node and then TypeScript, and today ships as a Docker Hub image with 60+ commands and a VIP plan paid via Pix. In the same period I published PlacaFipy on PyPI and FastAPI services with a Docker image built on every release."
+    },
+    "bullets": [
+     {
+      "pt": "Baileys, Drizzle ORM, MySQL, Express e GitHub Actions com attestation de build",
+      "en": "Baileys, Drizzle ORM, MySQL, Express and GitHub Actions with build attestation"
+     },
+     {
+      "pt": "PlacaFipy (PyPI), placa-fipe-api e globo-programming-api (Docker Hub)",
+      "en": "PlacaFipy (PyPI), placa-fipe-api and globo-programming-api (Docker Hub)"
+     },
+     {
+      "pt": "wa-book-keeper: moderação de grupos de leitura com busca de PDFs, imagem multi-arch",
+      "en": "wa-book-keeper: moderation for book-club groups with PDF search, multi-arch image"
+     }
+    ]
+   },
+   {
+    "period": {
+     "pt": "2022",
+     "en": "2022"
+    },
+    "type": "work",
+    "type_label": {
+     "pt": "Trabalho",
+     "en": "Work"
+    },
+    "title": {
+     "pt": "Desenvolvedor Web",
+     "en": "Web Developer"
+    },
+    "org": {
+     "pt": "Eletro Solar Engenharia",
+     "en": "Eletro Solar Engenharia"
+    },
+    "text": {
+     "pt": "Site institucional em WordPress, do tema à hospedagem e ao domínio, integrado a campanhas de tráfego pago para captação de leads.",
+     "en": "Company website in WordPress, from theme to hosting and domain, integrated with paid traffic campaigns for lead generation."
+    },
+    "bullets": [
+     {
+      "pt": "Tema, páginas, hospedagem e domínio",
+      "en": "Theme, pages, hosting and domain"
+     },
+     {
+      "pt": "Integração com campanhas de tráfego pago",
+      "en": "Integration with paid traffic campaigns"
+     }
+    ]
+   },
+   {
+    "period": {
+     "pt": "2022",
+     "en": "2022"
+    },
+    "type": "course",
+    "type_label": {
+     "pt": "Curso",
+     "en": "Course"
+    },
+    "title": {
+     "pt": "Fundamentos: CS50 e IoT",
+     "en": "Foundations: CS50 and IoT"
+    },
+    "org": {
+     "pt": "Harvard CS50 · FIT Instituto de Tecnologia",
+     "en": "Harvard CS50 · FIT Instituto de Tecnologia"
+    },
+    "text": {
+     "pt": "Problem sets do CS50 em C, incluindo o Tideman, e dois cursos de IoT no FIT: Desenvolvimento de Sistemas para Redes IoT (24h) e Programação de Software Embarcado em IoT (20h).",
+     "en": "CS50 problem sets in C, Tideman included, plus two IoT courses at FIT: Systems Development for IoT Networks (24h) and Embedded Software Programming for IoT (20h)."
+    },
+    "bullets": [
+     {
+      "pt": "CS50: C, arrays, algoritmos e grafos (Tideman)",
+      "en": "CS50: C, arrays, algorithms and graphs (Tideman)"
+     },
+     {
+      "pt": "FIT: redes IoT (mai/2022) e software embarcado (out/2022)",
+      "en": "FIT: IoT networks (May 2022) and embedded software (Oct 2022)"
+     }
+    ]
+   },
+   {
+    "period": {
+     "pt": "2021",
+     "en": "2021"
+    },
+    "type": "project",
+    "type_label": {
+     "pt": "Projeto",
+     "en": "Project"
+    },
+    "title": {
+     "pt": "Início: Python, PHP e um produto desktop",
+     "en": "The start: Python, PHP and a desktop product"
+    },
+    "org": {
+     "pt": "Autodidata",
+     "en": "Self-taught"
+    },
+    "text": {
+     "pt": "Comecei com Python e PHP resolvendo problemas do dia a dia. No mesmo ano nasceu o Instabot, produto comercial para Windows que automatizava a participação em sorteios do Instagram: app em Python, backend PHP e MySQL com painel admin, licenciamento por chave e auto-update.",
+     "en": "I started with Python and PHP, solving everyday problems. That same year I built Instabot, a commercial Windows product that automated entering Instagram giveaways: a Python app, a PHP and MySQL backend with an admin panel, key-based licensing and auto-update."
+    },
+    "bullets": [
+     {
+      "pt": "App Windows em Python (PySimpleGUI) com threads e cliente HTTP próprio",
+      "en": "Windows app in Python (PySimpleGUI) with threading and a custom HTTP client"
+     },
+     {
+      "pt": "Instalador com PyInstaller e Inno Setup; encerrado em 2022",
+      "en": "Installer built with PyInstaller and Inno Setup; discontinued in 2022"
+     }
+    ]
+   }
+  ]
+ },
+ "stack": {
+  "eyebrow": {
+   "pt": "Stack",
+   "en": "Stack"
+  },
+  "title": {
+   "pt": "O que uso de verdade.",
+   "en": "What I actually use."
+  },
+  "lead": {
+   "pt": "Sem lista de desejos: só o que aparece em código que escrevi e mantenho, do ERP em PHP aos SaaS em TypeScript e ao home lab.",
+   "en": "No wish list. Only what shows up in code I wrote and maintain, from the PHP ERP to the TypeScript SaaS products and the home lab."
+  },
+  "groups": [
+   {
+    "name": {
+     "pt": "Linguagens",
+     "en": "Languages"
+    },
+    "items": [
+     "PHP",
+     "Python",
+     "TypeScript",
+     "JavaScript",
+     "SQL"
+    ]
+   },
+   {
+    "name": {
+     "pt": "Back-end & APIs",
+     "en": "Back-end & APIs"
+    },
+    "items": [
+     "Node.js",
+     "Fastify",
+     "Express",
+     "FastAPI",
+     "Flask",
+     "Next.js (App Router, Server Actions)",
+     "Prisma",
+     "Drizzle ORM",
+     "Zod",
+     "OpenAPI",
+     "Mercado Pago",
+     "SAP Business One"
+    ]
+   },
+   {
+    "name": {
+     "pt": "Front-end",
+     "en": "Front-end"
+    },
+    "items": [
+     "React",
+     "Next.js",
+     "Tailwind CSS",
+     "PWA",
+     "Vite",
+     "HTML/CSS",
+     "WordPress"
+    ]
+   },
+   {
+    "name": {
+     "pt": "Dados",
+     "en": "Data"
+    },
+    "items": [
+     "MySQL",
+     "PostgreSQL",
+     "SQLite",
+     "Redis",
+     "BullMQ"
+    ]
+   },
+   {
+    "name": {
+     "pt": "Infra & DevOps",
+     "en": "Infra & DevOps"
+    },
+    "items": [
+     "Docker / Compose",
+     "pm2",
+     "Cloudflare Tunnel",
+     "GitHub Actions",
+     "Linux / Debian",
+     "libvirt / KVM",
+     "systemd"
+    ]
+   },
+   {
+    "name": {
+     "pt": "Automação, WhatsApp & IA",
+     "en": "Automation, WhatsApp & AI"
+    },
+    "items": [
+     "Baileys (WhatsApp)",
+     "Selenium",
+     "Playwright",
+     "Node-RED",
+     "Home Assistant",
+     "LiteLLM (Gemini / Groq)",
+     "MCP",
+     "Claude Code"
+    ]
+   }
+  ]
+ },
+ "contact": {
+  "eyebrow": {
+   "pt": "Contato",
+   "en": "Contact"
+  },
+  "title": {
+   "pt": "Vamos colocar algo no ar.",
+   "en": "Let's ship something."
+  },
+  "text": {
+   "pt": "Aberto a vagas remotas, freelas e projetos de automação. O caminho mais rápido é o e-mail; GitHub e LinkedIn também funcionam.",
+   "en": "Open to remote roles, freelance work and automation projects. Email is the fastest route; GitHub and LinkedIn work too."
+  },
+  "copy": {
+   "pt": "Copiar",
+   "en": "Copy"
+  },
+  "copied": {
+   "pt": "Copiado",
+   "en": "Copied"
+  },
+  "cv_label": {
+   "pt": "Currículo",
+   "en": "Résumé"
+  },
+  "cv_pt_label": {
+   "pt": "CV em português",
+   "en": "Résumé (Portuguese)"
+  },
+  "cv_en_label": {
+   "pt": "CV em inglês",
+   "en": "Résumé (English)"
+  }
+ },
+ "footer": {
+  "made": {
+   "pt": "Feito em Recife, PE. Código, deploy e domínio por conta própria.",
+   "en": "Made in Recife, Brazil. Code, deploy and domain, all mine."
+  },
+  "top": {
+   "pt": "Voltar ao topo",
+   "en": "Back to top"
+  }
+ },
+ "ui": {
+  "theme_toggle": {
+   "pt": "Alternar tema",
+   "en": "Toggle theme"
+  },
+  "lang_toggle": {
+   "pt": "Ver em inglês",
+   "en": "View in Portuguese"
+  },
+  "skip": {
+   "pt": "Pular para o conteúdo",
+   "en": "Skip to content"
+  },
+  "menu": {
+   "pt": "Menu",
+   "en": "Menu"
+  },
+  "available": {
+   "pt": "Disponível para remoto e freelas",
+   "en": "Open to remote and freelance"
+  },
+  "scroll": {
+   "pt": "Rolar",
+   "en": "Scroll"
+  }
+ }
+}
