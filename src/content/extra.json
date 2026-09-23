@@ -35,14 +35,6 @@
     }
    },
    {
-    "time": "12:01:03",
-    "tag": "ponto",
-    "text": {
-     "pt": "saída para o almoço → anúncio de voz nas Echo Dot",
-     "en": "lunch break clock-out → voice announcement on the Echo Dots"
-    }
-   },
-   {
     "time": "12:10:00",
     "tag": "nvr",
     "text": {
