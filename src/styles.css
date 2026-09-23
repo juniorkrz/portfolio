@@ -269,10 +269,10 @@ p{max-width:64ch}
 .wa-mic{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--wa-green);color:#0B141A;flex:none}
 .wa-mic svg{width:17px;height:17px}
 .wa-mic svg{transition:transform .2s cubic-bezier(.34,1.56,.64,1),opacity .15s}
-.wa-mic .ic-send{display:none;margin-left:2px}
+.wa-mic .ic-send{display:none;margin-left:3px}
 .wa-input:has(.wa-draft:not(:empty)) .ic-mic{display:none}
 .wa-input:has(.wa-draft:not(:empty)) .ic-send{display:block;animation:wa-pop .22s cubic-bezier(.34,1.56,.64,1)}
-@keyframes wa-pop{from{transform:scale(.4) rotate(-20deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes wa-pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
 
 /* também construí */
 .also{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;margin-bottom:22px}

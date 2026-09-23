@@ -232,7 +232,7 @@ export function render(C, B) {
           </div>
           <div class="wa-input">
             <span class="wa-field"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14a4 4 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><span class="wa-draft" id="wa-draft"></span><span class="wa-ph" ${attr('extra.mock.placeholder')}>${t('extra.mock.placeholder')}</span></span>
-            <span class="wa-mic"><svg class="ic-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><svg class="ic-send" viewBox="0 0 24 24"><path d="M4 12 20 4l-4 16-4-7z" fill="currentColor"/><path d="m12 13 8-9"/></svg></span>
+            <span class="wa-mic"><svg class="ic-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><svg class="ic-send" viewBox="0 0 24 24"><path d="M3 20.5 21.5 12 3 3.5v6.6L15 12 3 13.9z" fill="currentColor" stroke="none"/></svg></span>
           </div>
         </div>
       </div>`;
