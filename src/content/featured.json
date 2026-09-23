@@ -201,68 +201,6 @@
    ]
   },
   {
-   "id": "horusponto",
-   "name": "HorusPonto",
-   "year": "2026",
-   "badge": {
-    "pt": "Infra & CI/CD",
-    "en": "Infra & CI/CD"
-   },
-   "kind": {
-    "pt": "SaaS de ponto eletrônico · deploy self-hosted",
-    "en": "Time-clock SaaS · self-hosted deployment"
-   },
-   "title": {
-    "pt": "Do repositório à VPS: deploy self-hosted com pipeline automático",
-    "en": "From repository to VPS: self-hosted deployment on an automated pipeline"
-   },
-   "pitch": {
-    "pt": "SaaS de ponto eletrônico multiempresa em Next.js 15, Prisma, PostgreSQL e Auth.js v5. Neste projeto o trabalho foi levar a aplicação para produção em VPS própria e deixar o caminho de deploy previsível: push na branch principal, build no servidor, migração do banco, troca de release e restart, com backup do release anterior a cada publicação.",
-    "en": "Multi-company electronic time-clock SaaS on Next.js 15, Prisma, PostgreSQL and Auth.js v5. The work here was taking the app to production on a self-managed VPS and making the deploy path predictable: push to the main branch, build on the server, migrate the database, swap the release and restart, with the previous release backed up on every publish."
-   },
-   "bullets": [
-    {
-     "pt": "Deploy self-hosted: Next.js via pm2, PostgreSQL local e app escutando só em localhost, exposto por cloudflared.",
-     "en": "Self-hosted deployment: Next.js under pm2, local PostgreSQL and the app bound to localhost only, exposed through cloudflared."
-    },
-    {
-     "pt": "Script de deploy que reaproveita .env e uploads do release atual, roda pnpm install, prisma generate, prisma migrate deploy e next build, faz swap de diretórios com backup do release anterior e reinicia o pm2.",
-     "en": "Deploy script that reuses the current release's .env and uploads, runs pnpm install, prisma generate, prisma migrate deploy and next build, swaps directories with a backup of the previous release and restarts pm2."
-    },
-    {
-     "pt": "Pipeline GitHub Actions: a cada push na branch principal empacota o fonte, envia por scp e executa o script via SSH com chave ed25519 dedicada ao CI. Ajuste de auth para self-host e documentação Project Memory.",
-     "en": "GitHub Actions pipeline: every push to the main branch packages the source, copies it over scp and runs the script via SSH with an ed25519 key dedicated to CI. Auth adjusted for self-hosting, plus Project Memory documentation."
-    }
-   ],
-   "tags": [
-    "Next.js 15",
-    "Prisma",
-    "PostgreSQL",
-    "Auth.js v5",
-    "pm2",
-    "cloudflared",
-    "GitHub Actions",
-    "SSH",
-    "Linux"
-   ],
-   "live_url": "https://sistema-de-pontos-wheat.vercel.app",
-   "live_label": {
-    "pt": "Acessar",
-    "en": "Visit"
-   },
-   "code_url": "",
-   "code_private": true,
-   "role": {
-    "pt": "Infra, CI/CD e deploy self-hosted",
-    "en": "Infrastructure, CI/CD and self-hosted deployment"
-   },
-   "screenshot_hint": "https://sistema-de-pontos-wheat.vercel.app (tela de login)",
-   "sources": [
-    "FATOS: HorusPonto (repo privado sistema-de-pontos, SaaS de ponto eletrônico multiempresa, Next.js 15 + Prisma + PostgreSQL + Auth.js v5); contribuição = deploy self-hosted em VPS (pm2 + cloudflared + PostgreSQL), script de deploy com swap de release e backup, pipeline GitHub Actions de deploy automático, ajuste de auth para self-host, documentação Project Memory; URL https://sistema-de-pontos-wheat.vercel.app HTTP 200 em 21/09/2026; regra: não citar nomes de outras pessoas",
-    "memory/sistema-de-pontos-deploy.md (Next.js 15 via pm2, app escutando só em localhost e servido por cloudflared, PostgreSQL local; deploy-horus.sh reaproveita .env + uploads, pnpm install, prisma generate, prisma migrate deploy, next build, swap de diretórios com backup horus-ponto-old-<TS>, restart pm2; workflow deploy.yml no push da branch principal: empacota fonte, scp, SSH com chave ed25519 dedicada ao CI)"
-   ]
-  },
-  {
    "id": "stickerbot",
    "name": "StickerBot",
    "year": "2023 → hoje",

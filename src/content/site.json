@@ -67,12 +67,12 @@
   },
   "metrics": [
    {
-    "value": "6",
+    "value": "5",
     "label": {
      "pt": "projetos no ar",
      "en": "projects in production"
     },
-    "proof": "Seis URLs verificadas com HTTP 200 em 21/09/2026 (FATOS VERIFICADOS): PromoAI (promoai.jrkrz.xyz), Zapi (zapi.jrkrz.xyz), Veículos.lat (veiculos.lat, com loja piloto vip.veiculos.lat), BigStats (bigstats.jrkrz.xyz), HorusPonto (sistema-de-pontos-wheat.vercel.app; papel dele: infra, CI/CD e deploy self-hosted, 5 commits entre 2026-07-04 e 2026-08-03 confirmados via gh api) e a LP andresacarneiro.jrkrz.xyz. Fontes: repos-analise.md (promo-ai-saas, zapi, veh-saas, bigstats, andresa-carneiro). StickerBot ficou FORA da contagem: o site stickerbot.jrkrz.com não responde e o link wa.me do README não é prova de produção verificada hoje."
+    "proof": "URLs com HTTP 200: promoai.jrkrz.xyz, zapi.jrkrz.xyz, veiculos.lat, bigstats.jrkrz.xyz, andresacarneiro.jrkrz.xyz."
    },
    {
     "value": "5",
@@ -283,8 +283,8 @@
      "en": "Independent work"
     },
     "text": {
-     "pt": "PromoAI, Zapi e Veículos.lat foram do zero à produção em poucos meses, todos multi-tenant e em infraestrutura própria. No mesmo ano cuidei da infra, do CI/CD e do deploy self-hosted do HorusPonto e entreguei uma landing page com Lighthouse 100 para uma cliente real.",
-     "en": "PromoAI, Zapi and Veículos.lat went from zero to production within months, all multi-tenant and on my own infrastructure. The same year I handled infra, CI/CD and self-hosted deploy for HorusPonto and delivered a landing page scoring 100 on Lighthouse for a real client."
+     "pt": "PromoAI, Zapi e Veículos.lat foram do zero à produção em poucos meses, todos multi-tenant e em infraestrutura própria. No mesmo ano entreguei uma landing page com Lighthouse 100 para uma cliente real.",
+     "en": "PromoAI, Zapi and Veículos.lat went from zero to production within months, all multi-tenant and on my own infrastructure. The same year I delivered a landing page scoring 100 on Lighthouse for a real client."
     },
     "bullets": [
      {
