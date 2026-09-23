@@ -201,6 +201,67 @@
    ]
   },
   {
+   "id": "correcarpina",
+   "name": "Corre Carpina",
+   "year": "2026",
+   "badge": {
+    "pt": "Cliente real · no ar",
+    "en": "Real client · live"
+   },
+   "kind": {
+    "pt": "Link na bio + loja com Pix · Node + SQLite",
+    "en": "Link in bio + Pix store · Node + SQLite"
+   },
+   "title": {
+    "pt": "Link na bio, loja de camisas e Pix automático para um grupo de corrida",
+    "en": "Link in bio, jersey store and automatic Pix for a running group"
+   },
+   "pitch": {
+    "pt": "Página de links do grupo de corrida gratuito de Carpina, com contagem regressiva para a próxima corrida, e uma loja de camisas com carrinho, pagamento por Pix e retirada. Cada pedido ganha um código de acompanhamento e o organizador cuida de tudo pelo celular, num painel próprio. No ar em domínio próprio desde setembro de 2026.",
+    "en": "The link page for a free running group in Carpina, Brazil, with a countdown to the next run, plus a jersey store with cart, Pix payment and pickup. Every order gets a tracking code, and the organizer runs everything from a phone through a dedicated admin panel. Live on its own domain since September 2026."
+   },
+   "bullets": [
+    {
+     "pt": "Pix via API da Efí com webhook que **nunca confia no corpo**: reconsulta a cobrança e só marca pago com status concluído e valor batendo. Uma conferência a cada 60 s cobre webhook perdido e expiração, e há suporte a split de pagamento.",
+     "en": "Pix through the Efí API with a webhook that **never trusts the payload**: it re-queries the charge and only marks an order paid when the status is completed and the amount matches. A check every 60 s covers missed webhooks and expiry, with payment split support."
+    },
+    {
+     "pt": "Painel multiusuário com papéis, com a restrição aplicada na API e não só na tela. Pedidos seguem `aguardando_pagamento → pago → solicitado → entregue`, e a encomenda ao fornecedor agrega itens por modelo e tamanho numa transação idempotente.",
+     "en": "Multi-user admin panel with roles, enforced in the API rather than just the UI. Orders move through `awaiting_payment → paid → requested → delivered`, and the supplier order groups items by model and size in one idempotent transaction."
+    },
+    {
+     "pt": "Node, Express e SQLite sem framework no front: HTML, CSS e JS puros, vídeo de fundo e faixa de patrocinadores. Backup diário consistente com WAL e rotação, ambiente de DEV separado e deploy self-hosted por Cloudflare Tunnel.",
+     "en": "Node, Express and SQLite with no front-end framework: plain HTML, CSS and JS, a background video and a sponsor strip. Daily WAL-consistent backups with rotation, a separate DEV environment and self-hosted deploys over Cloudflare Tunnel."
+    }
+   ],
+   "tags": [
+    "Node.js",
+    "Express",
+    "SQLite",
+    "Pix (Efí)",
+    "Webhooks",
+    "HTML/CSS/JS",
+    "pm2",
+    "Cloudflare Tunnel"
+   ],
+   "live_url": "https://correcarpina.com",
+   "live_label": {
+    "pt": "Acessar",
+    "en": "Visit"
+   },
+   "code_url": "",
+   "code_private": true,
+   "role": {
+    "pt": "Autor: produto, loja, integração Pix, painel e deploy",
+    "en": "Author: product, store, Pix integration, admin panel and deployment"
+   },
+   "screenshot_hint": "https://correcarpina.com (sem o popup)",
+   "sources": [
+    "memory/correcarpina-links.md",
+    "repo privado juniorkrz/correcarpina"
+   ]
+  },
+  {
    "id": "horusponto",
    "name": "HorusPonto",
    "year": "2026",
