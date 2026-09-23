@@ -248,7 +248,7 @@ p{max-width:64ch}
 .wa-msg.media img{width:124px;height:124px;border-radius:6px;object-fit:cover}
 .wa-msg.media{padding:3px}
 .wa-msg.media>.wa-meta{position:absolute;right:8px;bottom:7px;margin:0;float:none;padding:1px 5px;border-radius:8px;background:rgba(0,0,0,.35);color:#fff}
-.wa-react{position:absolute;left:6px;bottom:-15px;display:grid;place-items:center;min-width:26px;height:22px;padding:0 5px;border-radius:12px;background:var(--wa-in);border:2px solid var(--wa-bg);font-size:12px;line-height:1;opacity:0;transform:scale(.3);transition:opacity .2s,transform .3s cubic-bezier(.34,1.56,.64,1)}
+.wa-react{position:absolute;right:6px;bottom:-15px;display:grid;place-items:center;min-width:26px;height:22px;padding:0 5px;border-radius:12px;background:var(--wa-in);border:2px solid var(--wa-bg);font-size:12px;line-height:1;opacity:0;transform:scale(.3);transition:opacity .2s,transform .3s cubic-bezier(.34,1.56,.64,1)}
 .wa-react.on{opacity:1;transform:none}
 .wa-msg:has(.wa-react.on){margin-bottom:14px}
 .wa-msg.sticker{background:none;box-shadow:none;padding:0}
