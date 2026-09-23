@@ -68,16 +68,8 @@
  "mock": {
   "name": "StickerBot",
   "status": {
-   "pt": "online · 3 anos no ar",
-   "en": "online · 3 years live"
-  },
-  "user1": {
-   "pt": "/sticker",
-   "en": "/sticker"
-  },
-  "bot1": {
-   "pt": "Criando sua figurinha…",
-   "en": "Creating your sticker…"
+   "pt": "online",
+   "en": "online"
   },
   "user2": {
    "pt": "/fipe ABC1D23",
@@ -86,6 +78,18 @@
   "bot2": {
    "pt": "**FIPE:** Fiesta 1.6 2014 · R$ 42.315",
    "en": "**FIPE:** Fiesta 1.6 2014 · R$ 42,315"
+  },
+  "typing": {
+   "pt": "digitando…",
+   "en": "typing…"
+  },
+  "today": {
+   "pt": "Hoje",
+   "en": "Today"
+  },
+  "placeholder": {
+   "pt": "Mensagem",
+   "en": "Message"
   }
  },
  "notfound": {

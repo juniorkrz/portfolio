@@ -3,7 +3,7 @@
   'use strict';
   var d = document, root = d.documentElement, w = window;
   root.classList.add('js');
-  var reduce = w.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = w.matchMedia('(prefers-reduced-motion: reduce)').matches && !/[?&]motion=1/.test(location.search);
   var fine = w.matchMedia('(pointer: fine)').matches;
   var store = {
     get: function (k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
@@ -169,6 +169,74 @@
     var start = function () { if (!con.dataset.on) { con.dataset.on = '1'; setTimeout(next, 500); } };
     if ('IntersectionObserver' in w) { var cio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { start(); cio.disconnect(); } }); }); cio.observe(con); }
     else start();
+  }
+
+  /* ---------- chat do StickerBot: conversa surgindo como no WhatsApp ---------- */
+  var chat = $('#wa-chat');
+  if (chat) {
+    var msgs = $$('.wa-msg', chat), typing = $('#wa-typing'), draft = $('#wa-draft');
+    var presence = $('.wa-presence', chat.parentNode);
+    var now = new Date(), hhmm = ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2);
+    $$('.wa-time, .wa-clock', chat.parentNode).forEach(function (t) { t.textContent = hhmm; });
+    if (reduce) { msgs.forEach(function (m) { m.classList.add('read'); }); $$('.wa-react', chat).forEach(function (r) { r.classList.add('on'); }); }
+    else {
+      var visible = false, running = false;
+      var sleep = function (ms) {
+        return new Promise(function (res) {
+          (function tick() { if (visible) setTimeout(res, ms); else setTimeout(tick, 300); })();
+        });
+      };
+      var setPresence = function (isTyping) {
+        presence.classList.toggle('typing', isTyping);
+        presence.textContent = presence.getAttribute(isTyping ? 'data-typing' : 'data-online');
+      };
+      var typeDraft = function (text) {
+        var i = 0;
+        return new Promise(function (res) {
+          (function step() {
+            draft.textContent = text.slice(0, ++i);
+            if (i < text.length) setTimeout(step, 70 + Math.random() * 60); else setTimeout(res, 350);
+          })();
+        });
+      };
+      var play = async function () {
+        running = true;
+        for (;;) {
+          msgs.forEach(function (m) { m.classList.add('pending'); m.classList.remove('read'); });
+          $$('.wa-react', chat).forEach(function (r) { r.classList.remove('on'); });
+          var lastUser = null;
+          setPresence(false); draft.textContent = '';
+          await sleep(900);
+          for (var i = 0; i < msgs.length; i++) {
+            var m = msgs[i];
+            if (m.getAttribute('data-step') === 'user') {
+              var txt = m.querySelector('p span');
+              if (txt) { await typeDraft(txt.textContent); draft.textContent = ''; }
+              m.classList.remove('pending');
+              await sleep(650);
+              m.classList.add('read');
+              await sleep(450);
+              lastUser = m.querySelector('.wa-react');
+              if (lastUser) { lastUser.textContent = '⏳'; lastUser.classList.add('on'); }
+              await sleep(400);
+            } else {
+              var isSticker = m.classList.contains('sticker');
+              if (isSticker) { await sleep(1600); }
+              else { setPresence(true); typing.classList.add('on'); await sleep(1100); typing.classList.remove('on'); setPresence(false); }
+              m.classList.remove('pending');
+              await sleep(250);
+              if (lastUser) { lastUser.textContent = '✅'; lastUser = null; }
+              await sleep(900);
+            }
+          }
+          await sleep(5000);
+        }
+      };
+      var wio = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { visible = e.isIntersecting; if (visible && !running) play(); });
+      }, { threshold: 0.35 });
+      wio.observe(chat);
+    }
   }
 
   /* ---------- ticker: duplica a trilha para loop contínuo ---------- */

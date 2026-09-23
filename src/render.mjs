@@ -210,14 +210,30 @@ export function render(C, B) {
   const shot = (p, i) => {
     if (p.id === 'stickerbot') {
       const M = C.extra.mock;
-      return `<div class="mock" aria-hidden="true">
-        <div class="mock-bar"><span class="mock-av">S</span><div><b>${esc(M.name)}</b><small ${attr('extra.mock.status')}>${t('extra.mock.status')}</small></div></div>
-        <div class="mock-body">
-          <div class="bub me"><span class="bub-img"></span><span ${attr('extra.mock.user1')}>${t('extra.mock.user1')}</span></div>
-          <div class="bub bot"><span ${attr('extra.mock.bot1')}>${t('extra.mock.bot1')}</span></div>
-          <div class="bub bot sticker"><span class="stk"></span></div>
-          <div class="bub me"><span ${attr('extra.mock.user2')}>${t('extra.mock.user2')}</span></div>
-          <div class="bub bot"><span ${attr('extra.mock.bot2', true)}>${t('extra.mock.bot2', true)}</span></div>
+      const SB = '/assets/img/stickerbot';
+      const ticks = '<svg class="wa-ticks" viewBox="0 0 16 11" aria-hidden="true"><path d="M1 6l3 3 6-7M6 9l1 1 7-8"/></svg>';
+      const meta = (me) => `<span class="wa-meta"><time class="wa-time">08:02</time>${me ? ticks : ''}</span>`;
+      return `<div class="phone" aria-hidden="true">
+        <div class="phone-screen">
+          <div class="wa-status"><time class="wa-clock">08:02</time><span class="wa-sys"><i></i><i></i><i></i></span></div>
+          <div class="wa-head">
+            <svg viewBox="0 0 24 24" class="wa-back"><path d="M15 5l-7 7 7 7"/></svg>
+            <img class="wa-av" src="${SB}/avatar-80.webp" srcset="${SB}/avatar-80.webp 1x, ${SB}/avatar-160.webp 2x" width="36" height="36" alt="" loading="lazy" decoding="async">
+            <div class="wa-who"><b>${esc(M.name)}</b><small class="wa-presence" data-online="${t('extra.mock.status')}" data-typing="${t('extra.mock.typing')}" ${attr('extra.mock.status')}>${t('extra.mock.status')}</small></div>
+            <span class="wa-icons"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 10 6-3v10l-6-3"/></svg><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg></span>
+          </div>
+          <div class="wa-chat" id="wa-chat">
+            <div class="wa-day"><span ${attr('extra.mock.today')}>${t('extra.mock.today')}</span></div>
+            <div class="wa-msg me media" data-step="user"><img src="${SB}/photo.webp" width="480" height="480" alt="" loading="lazy" decoding="async">${meta(true)}<span class="wa-react">✅</span></div>
+            <div class="wa-msg bot sticker" data-step="bot"><img src="${SB}/sticker.webp" width="320" height="320" alt="" loading="lazy" decoding="async">${meta(false)}</div>
+            <div class="wa-msg me" data-step="user"><p><span ${attr('extra.mock.user2')}>${t('extra.mock.user2')}</span>${meta(true)}</p><span class="wa-react">✅</span></div>
+            <div class="wa-msg bot" data-step="bot"><p><span ${attr('extra.mock.bot2', true)}>${t('extra.mock.bot2', true)}</span>${meta(false)}</p></div>
+            <div class="wa-typing" id="wa-typing"><i></i><i></i><i></i></div>
+          </div>
+          <div class="wa-input">
+            <span class="wa-field"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14a4 4 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><span class="wa-draft" id="wa-draft"></span><span class="wa-ph" ${attr('extra.mock.placeholder')}>${t('extra.mock.placeholder')}</span></span>
+            <span class="wa-mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+          </div>
         </div>
       </div>`;
     }
